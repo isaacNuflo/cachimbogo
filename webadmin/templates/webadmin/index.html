@@ -1,0 +1,140 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/webadmin.css' %}">
+    <title>CachimboGo</title>
+</head>
+<body>
+    <div align="center" style="height: 100px; background: rgb(0, 195, 255)">
+      <div class="titlec">CachimboGO</div>
+    </div>
+    <div class="form-group"></div>       
+    <div align="center" class="form-group">
+      <label style="font-family: 'Oswald'; font-size: 200%; color: black;" for="crud">AGREGAR PREGUNTA</label>
+    </div>
+      <div class="container"> 
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="labelc" for="correcta">Tema:</label>
+                      <select class="form-control form-control-lg">
+                        {% for asignatura in asignaturas %}				
+                        <option value="{{asignatura.id_asignatura}}">{{asignatura.nombre}}</option> 					
+                        {% endfor %} 				
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="labelc" for="correcta">Subtema:</label>
+                        <select class="form-control form-control-lg">
+                          {% for tema in temas %}				
+                          <option value="{{tema.id_tema}}">{{tema.nombre}}</option> 					
+                          {% endfor %} 				
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="labelc" for="correcta">Subtema:</label>
+                        <select class="form-control form-control-lg">
+                          {% for subtema in subtemas %}				
+                          <option value="{{subtema.id_subtema}}">{{subtema.nombre}}</option> 					
+                          {% endfor %} 				
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                </div>
+              <form>
+                <div class="form-group">
+                  <label class="labelc" for="Pregunta">Escriba su pregunta:</label>
+                  <input type="text" class="form-control" id="Pregunta" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="Alternativa1">Alternativa 1</label>
+                  <input type="text" class="form-control " id="Alternativa1" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="Alternativa2">Alternativa 2</label>
+                  <input type="text" class="form-control" id="Alternativa2" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="Alternativa3">Alternativa 3</label>
+                  <input type="text" class="form-control" id="Alternativa3" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="Alternativa4">Alternativa 4</label>
+                  <input type="text" class="form-control" id="Alternativa4" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="Alternativa5">Alternativa 5</label>
+                  <input type="text" class="form-control" id="Alternativa5" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="labelc" for="info">Informacion:</label>
+                  <textarea class="form-control" rows="5" id="info"></textarea>
+                </div>
+              </form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="labelc" for="correcta">Alternativa correcta:</label>
+                      <select class="form-control form-control-lg">				
+                        <option value="1">Alternativa 1</option> 					
+                        <option value="2">Alternativa 2</option> 					
+                        <option value="3">Alternativa 3</option> 					
+                        <option value="4">Alternativa 4</option> 					
+                        <option value="5">Alternativa 5</option> 				
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="labelc" for="correcta">Dificultad:</label>
+                        <select class="form-control form-control-lg">				
+                          <option value="1">Facil</option> 					
+                          <option value="2">Medio</option> 					
+                          <option value="3">Dificil</option> 					 				
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                  </div>  
+                <div class="form-group" align="center">
+                    <button type="button" class="btn btn-outline-primary">Guardar</button>
+                </div>
+          </div>
+        </div>
+      </div>
+          <div class="col-sm-3"></div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
