@@ -1,11 +1,14 @@
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.renderers import JSONRenderer
 from servicios.serializers import AsignaturaSerializer, DificultadSerializer, InformacionSerializer, TemaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
 from servicios.models import Asignatura, Dificultad, Informacion, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
 
 
 class AsignaturaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -37,12 +40,12 @@ class AsignaturaAPIView(APIView):
 
 class AsignaturaAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Asignatura.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = AsignaturaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = AsignaturaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = AsignaturaSerializer(data=request.data)
@@ -53,6 +56,8 @@ class AsignaturaAPIListView(APIView):
 
 
 class DificultadAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -84,12 +89,12 @@ class DificultadAPIView(APIView):
 
 class DificultadAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Dificultad.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = DificultadSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = DificultadSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = DificultadSerializer(data=request.data)
@@ -100,6 +105,8 @@ class DificultadAPIListView(APIView):
 
 
 class InformacionAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -131,12 +138,12 @@ class InformacionAPIView(APIView):
 
 class InformacionAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Informacion.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = InformacionSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = InformacionSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = InformacionSerializer(data=request.data)
@@ -147,6 +154,8 @@ class InformacionAPIListView(APIView):
 
 
 class TemaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -178,12 +187,12 @@ class TemaAPIView(APIView):
 
 class TemaAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Tema.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = TemaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = TemaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = TemaSerializer(data=request.data)
@@ -194,6 +203,8 @@ class TemaAPIListView(APIView):
 
 
 class SubtemaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -225,12 +236,12 @@ class SubtemaAPIView(APIView):
 
 class SubtemaAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Subtema.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = SubtemaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = SubtemaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = SubtemaSerializer(data=request.data)
@@ -241,6 +252,8 @@ class SubtemaAPIListView(APIView):
 
 
 class TipoPreguntaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -272,12 +285,12 @@ class TipoPreguntaAPIView(APIView):
 
 class TipoPreguntaAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = TipoPregunta.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = TipoPreguntaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = TipoPreguntaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = TipoPreguntaSerializer(data=request.data)
@@ -288,6 +301,8 @@ class TipoPreguntaAPIListView(APIView):
 
 
 class PreguntaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -319,12 +334,12 @@ class PreguntaAPIView(APIView):
 
 class PreguntaAPIListView(APIView):
 
+    renderer_classes = (JSONRenderer, )
+
     def get(self, request, format=None):
         items = Pregunta.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = PreguntaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = PreguntaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = PreguntaSerializer(data=request.data)
@@ -335,6 +350,8 @@ class PreguntaAPIListView(APIView):
 
 
 class RespuestaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -365,13 +382,13 @@ class RespuestaAPIView(APIView):
 
 
 class RespuestaAPIListView(APIView):
+    
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, format=None):
         items = Respuesta.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = RespuestaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = RespuestaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = RespuestaSerializer(data=request.data)
@@ -382,6 +399,8 @@ class RespuestaAPIListView(APIView):
 
 
 class UsuarioAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -412,13 +431,13 @@ class UsuarioAPIView(APIView):
 
 
 class UsuarioAPIListView(APIView):
+    
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, format=None):
         items = Usuario.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = UsuarioSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = UsuarioSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = UsuarioSerializer(data=request.data)
@@ -429,6 +448,8 @@ class UsuarioAPIListView(APIView):
 
 
 class UsuarioHasAsignaturaAPIView(APIView):
+    
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, id, format=None):
         try:
@@ -459,13 +480,13 @@ class UsuarioHasAsignaturaAPIView(APIView):
 
 
 class UsuarioHasAsignaturaAPIListView(APIView):
+    
+    renderer_classes = (JSONRenderer, )
 
     def get(self, request, format=None):
         items = UsuarioHasAsignatura.objects.all()
-        paginator = PageNumberPagination()
-        result_page = paginator.paginate_queryset(items, request)
-        serializer = UsuarioHasAsignaturaSerializer(result_page, many=True)
-        return paginator.get_paginated_response(serializer.data)
+        serializer = UsuarioHasAsignaturaSerializer(items, many=True)
+        return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = UsuarioHasAsignaturaSerializer(data=request.data)
