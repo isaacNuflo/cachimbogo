@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'servicios',
+    'webadmin',
     'rest_framework',
     'drf_generators',
 ]
