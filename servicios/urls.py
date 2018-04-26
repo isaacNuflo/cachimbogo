@@ -6,6 +6,7 @@ except ImportError:
 import django
 from django.contrib import admin
 from servicios import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 if django.VERSION[1] < 10:
   urlpatterns = patterns('',
@@ -21,6 +22,10 @@ if django.VERSION[1] < 10:
   
     url(r'^tema/(?P<id>[0-9]+)$', views.TemaAPIView.as_view()),
     url(r'^tema/$', views.TemaAPIListView.as_view()),
+
+    url(r'^tema-asignatura/(?P<id>[0-9]+)$',views.TemaAsignaturaAPIView.as_view),
+
+    url(r'^subtema-tema/(?P<id>[0-9]+)$',views.SubtemaTemaAPIView.as_view()),
   
     url(r'^subtema/(?P<id>[0-9]+)$', views.SubtemaAPIView.as_view()),
     url(r'^subtema/$', views.SubtemaAPIListView.as_view()),
@@ -30,6 +35,8 @@ if django.VERSION[1] < 10:
   
     url(r'^pregunta/(?P<id>[0-9]+)$', views.PreguntaAPIView.as_view()),
     url(r'^pregunta/$', views.PreguntaAPIListView.as_view()),
+
+    url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
@@ -55,6 +62,10 @@ else:
   
     url(r'^tema/(?P<id>[0-9]+)$', views.TemaAPIView.as_view()),
     url(r'^tema/$', views.TemaAPIListView.as_view()),
+
+    url(r'^tema-asignatura/(?P<id>[0-9]+)$',views.TemaAsignaturaAPIView.as_view()),
+
+    url(r'^subtema-tema/(?P<id>[0-9]+)$',views.SubtemaTemaAPIView.as_view()),
   
     url(r'^subtema/(?P<id>[0-9]+)$', views.SubtemaAPIView.as_view()),
     url(r'^subtema/$', views.SubtemaAPIListView.as_view()),
@@ -64,6 +75,8 @@ else:
   
     url(r'^pregunta/(?P<id>[0-9]+)$', views.PreguntaAPIView.as_view()),
     url(r'^pregunta/$', views.PreguntaAPIListView.as_view()),
+
+    url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
@@ -75,3 +88,4 @@ else:
     url(r'^usuariohasasignatura/$', views.UsuarioHasAsignaturaAPIListView.as_view()),
   
   ]
+urlpatterns = format_suffix_patterns(urlpatterns)

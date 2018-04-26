@@ -23,12 +23,26 @@ class InformacionSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class TemaAsignaturaSerializer(ModelSerializer):
+    
+    class Meta:
+        model = Tema
+        fields = '__all__'
+
+
+class SubtemaTemaSerializer(ModelSerializer):
+    
+    class Meta:
+        model = Subtema
+        fields = '__all__'        
+
+
 class TemaSerializer(ModelSerializer):
     asignatura = SerializerMethodField()
 
     def get_asignatura(self,tema):
-        asignatura = AsignaturaSerializer(tema.asignatura_id_asignatura,many=False,read_only=True)
-        return asignatura.data
+      asignatura = AsignaturaSerializer(tema.asignatura,many=False,read_only=True)
+      return asignatura.data
 
     class Meta:
         model = Tema
@@ -39,7 +53,7 @@ class SubtemaSerializer(ModelSerializer):
     tema = SerializerMethodField()
 
     def get_tema(self,subtema):
-        tema = TemaSerializer(subtema.tema_id_tema,many=False,read_only=True)
+        tema = TemaSerializer(subtema.tema,many=False,read_only=True)
         return tema.data
 
     class Meta:
@@ -51,6 +65,13 @@ class TipoPreguntaSerializer(ModelSerializer):
 
     class Meta:
         model = TipoPregunta
+        fields = '__all__'
+
+
+class PreguntaTSerializer(ModelSerializer):
+    
+    class Meta:
+        model = Pregunta
         fields = '__all__'
 
 

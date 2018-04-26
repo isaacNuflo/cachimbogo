@@ -44,7 +44,7 @@ class Tema(models.Model):
     nombre = models.CharField(max_length=100)
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     completado = models.IntegerField(blank=True, null=True)
-    asignatura_id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
+    asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -56,7 +56,7 @@ class Subtema(models.Model):
     nombre = models.CharField(max_length=100)
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     completado = models.IntegerField(blank=True, null=True)
-    tema_id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='TEMA_id_tema')  # Field name made lowercase.
+    tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='TEMA_id_tema')  # Field name made lowercase.
 
     class Meta:
         managed = False

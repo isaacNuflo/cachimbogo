@@ -2,7 +2,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
-from servicios.serializers import AsignaturaSerializer, DificultadSerializer, InformacionSerializer, TemaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
+from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, InformacionSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
 from servicios.models import Asignatura, Dificultad, Informacion, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
 
 
@@ -41,6 +41,7 @@ class AsignaturaAPIView(APIView):
 class AsignaturaAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Asignatura.objects.all()
@@ -90,6 +91,7 @@ class DificultadAPIView(APIView):
 class DificultadAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Dificultad.objects.all()
@@ -139,6 +141,7 @@ class InformacionAPIView(APIView):
 class InformacionAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Informacion.objects.all()
@@ -152,6 +155,29 @@ class InformacionAPIListView(APIView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
+class SubtemaTemaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
+
+    def get(self, request, id, format=None):
+        try:
+            item = Subtema.objects.filter(tema__pk=id)
+            serializer = SubtemaTemaSerializer(item,many=True)
+            return Response(serializer.data)
+        except Tema.DoesNotExist:
+            return Response(status=404)
+
+class TemaAsignaturaAPIView(APIView):
+
+    renderer_classes = (JSONRenderer, )
+
+    def get(self, request, id, format=None):
+        try:
+            item = Tema.objects.filter(asignatura__pk=id)
+            serializer = TemaAsignaturaSerializer(item,many=True)
+            return Response(serializer.data)
+        except Tema.DoesNotExist:
+            return Response(status=404)
 
 class TemaAPIView(APIView):
 
@@ -188,6 +214,7 @@ class TemaAPIView(APIView):
 class TemaAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Tema.objects.all()
@@ -237,6 +264,7 @@ class SubtemaAPIView(APIView):
 class SubtemaAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Subtema.objects.all()
@@ -286,6 +314,7 @@ class TipoPreguntaAPIView(APIView):
 class TipoPreguntaAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = TipoPregunta.objects.all()
@@ -332,9 +361,27 @@ class PreguntaAPIView(APIView):
         return Response(status=204)
 
 
+class PreguntaTAPIListView(APIView):
+    renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
+
+    def get(self, request, format=None):
+        items = Pregunta.objects.all()
+        serializer = PreguntaTSerializer(items, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = PreguntaTSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+
 class PreguntaAPIListView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Pregunta.objects.all()
@@ -384,6 +431,7 @@ class RespuestaAPIView(APIView):
 class RespuestaAPIListView(APIView):
     
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Respuesta.objects.all()
@@ -433,6 +481,7 @@ class UsuarioAPIView(APIView):
 class UsuarioAPIListView(APIView):
     
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = Usuario.objects.all()
@@ -482,6 +531,7 @@ class UsuarioHasAsignaturaAPIView(APIView):
 class UsuarioHasAsignaturaAPIListView(APIView):
     
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         items = UsuarioHasAsignatura.objects.all()

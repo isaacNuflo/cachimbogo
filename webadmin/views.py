@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from .models import Asignatura, Tema, Subtema
+from django.views.decorators.http import require_http_methods
 
-# Create your views here.
+@require_http_methods(["GET", "POST"])
 def index(request):
     asignaturas = Asignatura.objects.all()
-    temas = Tema.objects.all()
-    subtemas = Subtema.objects.all()
     context = {
             'asignaturas' : asignaturas,
-            'temas' : temas,
-            'subtemas' : subtemas,
     }
     return render(request, 'webadmin/index.html',context)
