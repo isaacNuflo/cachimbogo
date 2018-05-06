@@ -16,13 +16,6 @@ class DificultadSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class InformacionSerializer(ModelSerializer):
-
-    class Meta:
-        model = Informacion
-        fields = '__all__'
-
-
 class TemaAsignaturaSerializer(ModelSerializer):
     
     class Meta:
@@ -78,7 +71,6 @@ class PreguntaTSerializer(ModelSerializer):
 class PreguntaSerializer(ModelSerializer):
     dificultad = SerializerMethodField()
     subtema = SerializerMethodField()
-    informacion = SerializerMethodField()
     tipo_pregunta = SerializerMethodField()
     
     def get_tipo_pregunta(self,pregunta):

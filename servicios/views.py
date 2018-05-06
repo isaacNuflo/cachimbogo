@@ -2,6 +2,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, InformacionSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
 from servicios.models import Asignatura, Dificultad, Informacion, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
 
@@ -100,56 +101,6 @@ class DificultadAPIListView(APIView):
 
     def post(self, request, format=None):
         serializer = DificultadSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-
-
-class InformacionAPIView(APIView):
-
-    renderer_classes = (JSONRenderer, )
-
-    def get(self, request, id, format=None):
-        try:
-            item = Informacion.objects.get(pk=id)
-            serializer = InformacionSerializer(item)
-            return Response(serializer.data)
-        except Informacion.DoesNotExist:
-            return Response(status=404)
-
-    def put(self, request, id, format=None):
-        try:
-            item = Informacion.objects.get(pk=id)
-        except Informacion.DoesNotExist:
-            return Response(status=404)
-        serializer = InformacionSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-    def delete(self, request, id, format=None):
-        try:
-            item = Informacion.objects.get(pk=id)
-        except Informacion.DoesNotExist:
-            return Response(status=404)
-        item.delete()
-        return Response(status=204)
-
-
-class InformacionAPIListView(APIView):
-
-    renderer_classes = (JSONRenderer, )
-    parser_classes = (JSONParser,)
-
-    def get(self, request, format=None):
-        items = Informacion.objects.all()
-        serializer = InformacionSerializer(items, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = InformacionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)

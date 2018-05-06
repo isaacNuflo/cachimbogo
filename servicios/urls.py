@@ -17,9 +17,6 @@ if django.VERSION[1] < 10:
     url(r'^dificultad/(?P<id>[0-9]+)$', views.DificultadAPIView.as_view()),
     url(r'^dificultad/$', views.DificultadAPIListView.as_view()),
   
-    url(r'^informacion/(?P<id>[0-9]+)$', views.InformacionAPIView.as_view()),
-    url(r'^informacion/$', views.InformacionAPIListView.as_view()),
-  
     url(r'^tema/(?P<id>[0-9]+)$', views.TemaAPIView.as_view()),
     url(r'^tema/$', views.TemaAPIListView.as_view()),
 
@@ -56,9 +53,6 @@ else:
   
     url(r'^dificultad/(?P<id>[0-9]+)$', views.DificultadAPIView.as_view()),
     url(r'^dificultad/$', views.DificultadAPIListView.as_view()),
-  
-    url(r'^informacion/(?P<id>[0-9]+)$', views.InformacionAPIView.as_view()),
-    url(r'^informacion/$', views.InformacionAPIListView.as_view()),
   
     url(r'^tema/(?P<id>[0-9]+)$', views.TemaAPIView.as_view()),
     url(r'^tema/$', views.TemaAPIListView.as_view()),

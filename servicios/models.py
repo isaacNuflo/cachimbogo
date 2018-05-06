@@ -30,15 +30,6 @@ class Dificultad(models.Model):
         db_table = 'DIFICULTAD'
 
 
-class Informacion(models.Model):
-    id_informacion = models.AutoField(primary_key=True)
-    informacion = models.CharField(max_length=800, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'INFORMACION'
-
-
 class Tema(models.Model):
     id_tema = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)

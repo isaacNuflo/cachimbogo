@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'webadmin',
     'rest_framework',
     'drf_generators',
-    'pipeline',
     'corsheaders',
 ]
 
@@ -85,10 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'u736411459_bd',
-        'USER': 'u736411459_alexk',
-        'PASSWORD': 'ruEvGTzVY1F7',
-        'HOST': 'sql141.main-hosting.eu',
-        'PORT': '',
+        'USER': 'root',
+        'PASSWORD': 'asd123',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
