@@ -29,7 +29,7 @@
               <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label class="labelc" for="correcta">Tema:</label>
+                      <label class="labelc" for="asginaturas">Tema:</label>
                       <select class="form-control" id="selectAsiganturas">
                         <option >Seleccione Asignatura</option>
                         {% for asignatura in asignaturas %}				
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="labelc" for="correcta">Subtema:</label>
+                        <label class="labelc" for="temas">Subtema:</label>
                         <select class="form-control" id="selectTemas">
                           <option>Seleccione tema</option>
                         </select>
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="labelc" for="correcta">Subtema:</label>
+                        <label class="labelc" for="subtema">Subtema:</label>
                         <select class="form-control" id="selectSubTemas">	
                             <option>Seleccione Subtema</option>		
                         </select>
@@ -99,8 +99,8 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="labelc" for="correcta">Alternativa correcta:</label>
-                      <select class="form-control form-control-lg">
-                        <option>Seleccione la alternativa correcta</option>				
+                      <select class="form-control" id="selectAlternativa">
+                        <option value="0">Seleccione la alternativa correcta</option>				
                         <option value="1">Alternativa 1</option> 					
                         <option value="2">Alternativa 2</option> 					
                         <option value="3">Alternativa 3</option> 					
@@ -115,9 +115,9 @@
                 <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="labelc" for="correcta">Dificultad:</label>
-                        <select class="form-control form-control-lg">
-                          <option>Seleccione una dificultad</option>				
+                        <label class="labelc" for="dificultades">Dificultad:</label>
+                        <select class="form-control" id="selectDificultad">
+                          <option value="0">Seleccione una dificultad</option>				
                           <option value="1">Facil</option> 					
                           <option value="2">Medio</option> 					
                           <option value="3">Dificil</option> 					 				

@@ -20,11 +20,11 @@ $(document).ready(function () {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "http://localhost:8000/servicios/subtema-tema/" + tema;// cargar url de servicio de subtemas
+            var url = "http://localhost:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
-            subTema = $(this).val();
+            subtema = $(this).val();
         } else if (id === selectAlternativa) {
             correcta = $(this).val();
         } else if (id === selectDificultad) {
@@ -39,12 +39,24 @@ $(document).ready(function () {
         alternativa4 = $("#Alternativa4").val();
         alternativa5 = $("#Alternativa5").val();
         informacion = $("#info").val();
+        console.log("correcta: "+correcta);
+        console.log("subtema: "+subtema);
+        console.log("alternativa5: "+alternativa5);
 
-
-
-        var obj = new crearObj(subTema, pregunta, alternativa1, alternativa2, alternativa3,
+        var obj = new crearObj(subtema, pregunta, alternativa1, alternativa2, alternativa3,
             alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta);
-        alert(obj);
+        console.log(obj.clave1);
+        console.log(obj.clave2);
+        console.log(obj.clave3);
+        console.log(obj.clave4);
+        console.log(obj.clave5);
+        console.log(obj.correcta_num);
+        console.log(obj.dificultad_id_dificultad);
+        console.log(obj.enunciado);
+        console.log(obj.estado);
+        console.log(obj.id_pregunta);
+        console.log(obj.informacion);
+        console.log(obj.subtema_id_subtema);
 
         enviarData(obj);
     });
@@ -91,7 +103,9 @@ $(document).ready(function () {
     }
 
 });
-function crearObj(tema, subTema, asignatura, pregunta, alternativa1, alternativa2, alternativa3, alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta) {
+
+function crearObj(subTema,pregunta, alternativa1, alternativa2, alternativa3,
+    alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta) {
     this.id_pregunta = null;
     this.enunciado = pregunta;
     this.clave1 = alternativa1;
@@ -99,8 +113,10 @@ function crearObj(tema, subTema, asignatura, pregunta, alternativa1, alternativa
     this.clave3 = alternativa3;
     this.clave4 = alternativa4;
     this.clave5 = alternativa5;
-    this.correcta = parseInt(correcta);
     this.estado = 1;
+    this.subtema_id_subtema = parseInt(subTema);
+    this.tipo_pregunta_id_tipopregunta = 2;
+    this.dificultad_id_dificultad = parseInt(dificultad);
+    this.correcta_num = parseInt(correcta);
     this.informacion = informacion;
-    this.tema_id_tema = parseInt(tema);  
 }

@@ -3,13 +3,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, InformacionSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
-from servicios.models import Asignatura, Dificultad, Informacion, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
+from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
+from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
 
 
 class AsignaturaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -60,6 +61,7 @@ class AsignaturaAPIListView(APIView):
 class DificultadAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -109,10 +111,11 @@ class DificultadAPIListView(APIView):
 class SubtemaTemaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
-            item = Subtema.objects.filter(tema__pk=id)
+            item = Subtema.objects.filter(tema_id_tema__pk=id)
             serializer = SubtemaTemaSerializer(item,many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -121,10 +124,11 @@ class SubtemaTemaAPIView(APIView):
 class TemaAsignaturaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
-            item = Tema.objects.filter(asignatura__pk=id)
+            item = Tema.objects.filter(asignatura_id_asignatura__pk=id)
             serializer = TemaAsignaturaSerializer(item,many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -133,6 +137,7 @@ class TemaAsignaturaAPIView(APIView):
 class TemaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -183,6 +188,7 @@ class TemaAPIListView(APIView):
 class SubtemaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -233,6 +239,7 @@ class SubtemaAPIListView(APIView):
 class TipoPreguntaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -283,6 +290,7 @@ class TipoPreguntaAPIListView(APIView):
 class PreguntaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -350,6 +358,7 @@ class PreguntaAPIListView(APIView):
 class RespuestaAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -400,6 +409,7 @@ class RespuestaAPIListView(APIView):
 class UsuarioAPIView(APIView):
 
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
@@ -450,6 +460,7 @@ class UsuarioAPIListView(APIView):
 class UsuarioHasAsignaturaAPIView(APIView):
     
     renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:

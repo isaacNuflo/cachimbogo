@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from servicios.models import Asignatura, Dificultad, Informacion, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
+from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
 
 
 class AsignaturaSerializer(ModelSerializer):
@@ -34,7 +34,7 @@ class TemaSerializer(ModelSerializer):
     asignatura = SerializerMethodField()
 
     def get_asignatura(self,tema):
-      asignatura = AsignaturaSerializer(tema.asignatura,many=False,read_only=True)
+      asignatura = AsignaturaSerializer(tema.asignatura_id_asignatura,many=False,read_only=True)
       return asignatura.data
 
     class Meta:
@@ -46,7 +46,7 @@ class SubtemaSerializer(ModelSerializer):
     tema = SerializerMethodField()
 
     def get_tema(self,subtema):
-        tema = TemaSerializer(subtema.tema,many=False,read_only=True)
+        tema = TemaSerializer(subtema.tema_id_tema,many=False,read_only=True)
         return tema.data
 
     class Meta:
@@ -76,10 +76,6 @@ class PreguntaSerializer(ModelSerializer):
     def get_tipo_pregunta(self,pregunta):
         tipo_pregunta = TipoPreguntaSerializer(pregunta.tipo_pregunta_id_tipopregunta,many=False,read_only=True)
         return tipo_pregunta.data
-
-    def get_informacion(self,pregunta):
-        informacion = InformacionSerializer(pregunta.informacion_id_informacion,many=False,read_only=True)
-        return informacion.data
 
     def get_subtema(self,pregunta):
         subtema = SubtemaSerializer(pregunta.subtema_id_subtema,many=False,read_only=True)

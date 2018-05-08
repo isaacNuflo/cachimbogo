@@ -17,8 +17,7 @@ class Asignatura(models.Model):
     completado = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
-        db_table = 'ASIGNATURA'
+        db_table = 'asignatura'
 
 
 class Dificultad(models.Model):
@@ -26,8 +25,7 @@ class Dificultad(models.Model):
     nivel = models.CharField(max_length=10)
 
     class Meta:
-        managed = False
-        db_table = 'DIFICULTAD'
+        db_table = 'dificultad'
 
 
 class Tema(models.Model):
@@ -35,11 +33,10 @@ class Tema(models.Model):
     nombre = models.CharField(max_length=100)
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     completado = models.IntegerField(blank=True, null=True)
-    asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
+    asignatura_id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
 
     class Meta:
-        managed = False
-        db_table = 'TEMA'
+        db_table = 'tema'       
 
 
 class Subtema(models.Model):
@@ -47,11 +44,10 @@ class Subtema(models.Model):
     nombre = models.CharField(max_length=100)
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     completado = models.IntegerField(blank=True, null=True)
-    tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='TEMA_id_tema')  # Field name made lowercase.
+    tema_id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='TEMA_id_tema')  # Field name made lowercase.
 
     class Meta:
-        managed = False
-        db_table = 'SUBTEMA'
+        db_table = 'subtema'
 
 
 class TipoPregunta(models.Model):
@@ -59,8 +55,7 @@ class TipoPregunta(models.Model):
     nombre = models.CharField(max_length=10)
 
     class Meta:
-        managed = False
-        db_table = 'TIPO_PREGUNTA'
+        db_table = 'tipo_pregunta'
 
 
 class Pregunta(models.Model):
@@ -71,16 +66,15 @@ class Pregunta(models.Model):
     clave3 = models.CharField(max_length=200)
     clave4 = models.CharField(max_length=200)
     clave5 = models.CharField(max_length=200)
-    correcta = models.CharField(max_length=200)
     estado = models.IntegerField(blank=True, null=True)
-    informacion_id_informacion = models.ForeignKey(Informacion, models.DO_NOTHING, db_column='INFORMACION_id_informacion', blank=True, null=True)  # Field name made lowercase.
     subtema_id_subtema = models.ForeignKey(Subtema, models.DO_NOTHING, db_column='SUBTEMA_id_subtema')  # Field name made lowercase.
     tipo_pregunta_id_tipopregunta = models.ForeignKey(TipoPregunta, models.DO_NOTHING, db_column='TIPO_PREGUNTA_id_tipopregunta')  # Field name made lowercase.
     dificultad_id_dificultad = models.ForeignKey(Dificultad, models.DO_NOTHING, db_column='DIFICULTAD_id_dificultad')  # Field name made lowercase.
+    correcta_num = models.SmallIntegerField(blank=True, null=True)
+    informacion = models.CharField(max_length=800, blank=True, null=True)
 
     class Meta:
-        managed = False
-        db_table = 'PREGUNTA'
+        db_table = 'pregunta'
 
 
 class Respuesta(models.Model):
@@ -89,8 +83,7 @@ class Respuesta(models.Model):
     pregunta_id_pregunta = models.ForeignKey(Pregunta, models.DO_NOTHING, db_column='PREGUNTA_id_pregunta')  # Field name made lowercase.
 
     class Meta:
-        managed = False
-        db_table = 'RESPUESTA'
+        db_table = 'respuesta'
 
 
 class Usuario(models.Model):
@@ -102,8 +95,7 @@ class Usuario(models.Model):
     correo = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
-        managed = False
-        db_table = 'USUARIO'
+        db_table = 'usuario'
 
 
 class UsuarioHasAsignatura(models.Model):
@@ -111,6 +103,5 @@ class UsuarioHasAsignatura(models.Model):
     asignatura_id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
 
     class Meta:
-        managed = False
-        db_table = 'USUARIO_has_ASIGNATURA'
+        db_table = 'usuario_has_asignatura'
         unique_together = (('usuario_id_usuario', 'asignatura_id_asignatura'),)
