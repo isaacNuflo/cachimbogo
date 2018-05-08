@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_generators',
     'corsheaders',
+    'dj_database_url',
+    'gunicorn',
+    'whitenoise',
 ]
 
 MIDDLEWARE = [
@@ -84,9 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'u736411459_bd',
-        'USER': 'root',
-        'PASSWORD': 'asd123',
-        'HOST': 'localhost',
+        'USER': 'u736411459_alexk',
+        'PASSWORD': 'ruEvGTzVY1F7',
+        'HOST': 'sql141.main-hosting.eu',
         'PORT': '3306',
     }
 }
@@ -153,3 +156,18 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ),
 }
+
+# Update database configuration with $DATABASE_URL.
+import dj_database_url  
+db_from_env = dj_database_url.config(conn_max_age=500)  
+DATABASES['default'].update(db_from_env)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (  
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
