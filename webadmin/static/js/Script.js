@@ -39,26 +39,17 @@ $(document).ready(function () {
         alternativa4 = $("#Alternativa4").val();
         alternativa5 = $("#Alternativa5").val();
         informacion = $("#info").val();
-        console.log("correcta: "+correcta);
-        console.log("subtema: "+subtema);
-        console.log("alternativa5: "+alternativa5);
 
         var obj = new crearObj(subtema, pregunta, alternativa1, alternativa2, alternativa3,
             alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta);
-        console.log(obj.clave1);
-        console.log(obj.clave2);
-        console.log(obj.clave3);
-        console.log(obj.clave4);
-        console.log(obj.clave5);
-        console.log(obj.correcta_num);
-        console.log(obj.dificultad_id_dificultad);
-        console.log(obj.enunciado);
-        console.log(obj.estado);
-        console.log(obj.id_pregunta);
-        console.log(obj.informacion);
-        console.log(obj.subtema_id_subtema);
 
         enviarData(obj);
+        $("#Alternativa1").val("");
+        $("#Alternativ2").val("");
+        $("#Alternativa3").val("");
+        $("#Alternativa4").val("");
+        $("#Alternativa5").val("");
+        $("#info").val("");
     });
 
     function enviarData(obj) {

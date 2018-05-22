@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/webadmin.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/questionBrowser.js' %}"></script>
+    <title>CachimboGo</title>
+</head>
+
+<body>
+    <div align="center" style="height: 100px; background: rgb(0, 195, 255)">
+        <div class="titlec">CachimboGO</div>
+    </div>
+    <div class="form-group"></div>
+    <div align="center" class="form-group">
+        <label style="font-family: 'Oswald'; font-size: 200%; color: black;" for="crud">PREGUNTAS</label>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="labelc" for="asginaturas">Tema:</label>
+                            <select class="form-control" id="selectAsiganturas">
+                                <option>Seleccione Asignatura</option>
+                                {% for asignatura in asignaturas %}
+                                <option value="{{asignatura.id_asignatura}}">{{asignatura.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="labelc" for="temas">Subtema:</label>
+                            <select class="form-control" id="selectTemas">
+                                <option>Seleccione tema</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="labelc" for="subtema">Subtema:</label>
+                            <select class="form-control" id="selectSubTemas">
+                                <option>Seleccione Subtema</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group" align="center">
+                    <button type="button" class="btn btn-outline-primary" id="buscar">Buscar</button>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Preguntas</div>
+                    <table class="table" border="1" id="tabla">
+                    </table>
+                </div>
+            </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+</body>
+
+</html>

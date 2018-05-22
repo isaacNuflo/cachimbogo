@@ -324,8 +324,8 @@ class PreguntaTAPIListView(APIView):
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = Pregunta.objects.all()
+    def get(self, request, id , format=None):
+        items = Pregunta.objects.filter(subtema_id_subtema__id_subtema=id)
         serializer = PreguntaTSerializer(items, many=True)
         return Response(serializer.data)
 

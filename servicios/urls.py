@@ -34,6 +34,7 @@ if django.VERSION[1] < 10:
     url(r'^pregunta/$', views.PreguntaAPIListView.as_view()),
 
     url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
+    url(r'^preguntaT/(?P<id>[0-9]+)$', views.PreguntaTAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
@@ -71,6 +72,7 @@ else:
     url(r'^pregunta/$', views.PreguntaAPIListView.as_view()),
 
     url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
+    url(r'^preguntaT/(?P<id>[0-9]+)$', views.PreguntaTAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
