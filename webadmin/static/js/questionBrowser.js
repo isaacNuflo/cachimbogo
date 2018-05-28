@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    var tema, subTema, asignatura;
+    var tema, subtema, asignatura;
 
-    var selectAsiganaturas = $("#selectAsiganturas").attr("id");
+    var selectAsiganaturas = $("#selectAsignaturas").attr("id");
     var selectTemas = $("#selectTemas").attr("id");
     var selectSubTemas = $("#selectSubTemas").attr("id");
 
@@ -10,14 +10,14 @@ $(document).ready(function () {
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "http://localhost:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas 
+            var url = "http://127.0.0.1:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "http://localhost:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            var url = "http://127.0.0.1:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -25,7 +25,7 @@ $(document).ready(function () {
         }    
     });
     $("#buscar").click(function () {
-        var url = "http://localhost:8000/servicios/preguntaT/" + subtema;
+        var url = "http://127.0.0.1:8000/servicios/preguntaT/" + subtema;
         cargarTabla(url);
     });
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
                 var btn = document.createElement("button");
                 btn.setAttribute('className','btn btn-outline-primary');
                 btn.setAttribute('id','detalles');
-                btn.onclick = function(){window.location.href = "http://localhost:8000/webadmin/questionUpdate/"+datos[value].id_pregunta; };
+                btn.onclick = function(){window.location.href = "http://127.0.0.1:8000/webadmin/questionUpdate/"+datos[value].id_pregunta; };
                 tr.appendChild(tdId);
                 tr.appendChild(tdEnunciado);
                 tr.appendChild(btn);

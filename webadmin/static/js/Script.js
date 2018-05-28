@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    var tema, subTema, asignatura, pregunta, alternativa1, alternativa2, alternativa3,
+    var tema, subtema, asignatura, pregunta, alternativa1, alternativa2, alternativa3,
         alternativa4, alternativa5, informacion, dificultad, correcta;
 
-    var selectAsiganaturas = $("#selectAsiganturas").attr("id");
+    var selectAsiganaturas = $("#selectAsignaturas").attr("id");
     var selectTemas = $("#selectTemas").attr("id");
     var selectSubTemas = $("#selectSubTemas").attr("id");
     var selectAlternativa = $("#selectAlternativa").attr("id");
@@ -13,14 +13,14 @@ $(document).ready(function () {
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "http://localhost:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas 
+            var url = "http://127.0.0.1:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "http://localhost:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            var url = "http://127.0.0.1:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "http://localhost:8000/servicios/preguntaT/",
+            url: "http://127.0.0.1:8000/servicios/preguntaT/",
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {
@@ -95,7 +95,7 @@ $(document).ready(function () {
 
 });
 
-function crearObj(subTema,pregunta, alternativa1, alternativa2, alternativa3,
+function crearObj(subtema,pregunta, alternativa1, alternativa2, alternativa3,
     alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta) {
     this.id_pregunta = null;
     this.enunciado = pregunta;
@@ -105,7 +105,7 @@ function crearObj(subTema,pregunta, alternativa1, alternativa2, alternativa3,
     this.clave4 = alternativa4;
     this.clave5 = alternativa5;
     this.estado = 1;
-    this.subtema_id_subtema = parseInt(subTema);
+    this.subtema_id_subtema = parseInt(subtema);
     this.tipo_pregunta_id_tipopregunta = 2;
     this.dificultad_id_dificultad = parseInt(dificultad);
     this.correcta_num = parseInt(correcta);

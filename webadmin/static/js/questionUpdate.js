@@ -1,8 +1,13 @@
 $(document).ready(function () {
-    var tema, subTema, asignatura, pregunta, alternativa1, alternativa2, alternativa3,
-        alternativa4, alternativa5, informacion, dificultad, correcta;
+    var tema = $('#selectTemas').val();
+    var subtema = $('#selectSubTemas').val();
+    var asignatura = $('#selectAsignaturas').val();
+    var pregunta, alternativa1, alternativa2, alternativa3,
+        alternativa4, alternativa5, informacion;
+    var dificultad = $('#selectDificultad').val();
+    var correcta = $('#selectAlternativa').val();
 
-    var selectAsiganaturas = $("#selectAsiganturas").attr("id");
+    var selectAsiganaturas = $("#selectAsignaturas").attr("id");
     var selectTemas = $("#selectTemas").attr("id");
     var selectSubTemas = $("#selectSubTemas").attr("id");
     var selectAlternativa = $("#selectAlternativa").attr("id");
@@ -13,14 +18,14 @@ $(document).ready(function () {
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "http://localhost:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            var url = "http://127.0.0.1:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "http://localhost:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            var url = "http://127.0.0.1:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -31,7 +36,7 @@ $(document).ready(function () {
             dificultad = $(this).val();
         }
     });
-    $("#guardar").click(function () {
+    $("#actualizar").click(function () {
         pregunta = $("#Pregunta").val();
         alternativa1 = $("#Alternativa1").val();
         alternativa2 = $("#Alternativa2").val();
@@ -42,8 +47,7 @@ $(document).ready(function () {
 
         var obj = new crearObj(subtema, pregunta, alternativa1, alternativa2, alternativa3,
             alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta);
-
-        enviarData(obj);
+        actualizarData(obj);
         $("#Alternativa1").val("");
         $("#Alternativ2").val("");
         $("#Alternativa3").val("");
@@ -52,11 +56,30 @@ $(document).ready(function () {
         $("#info").val("");
     });
 
-    function enviarData(obj) {
+        $("#eliminar").click(function () {
+                event.preventDefault();
+            $.ajax({
+                type: "DELETE",
+                url: "http://127.0.0.1:8000/servicios/pregunta/" +$('#idPregunta').val(),
+                csrfmiddlewaretoken: "{{ csrf_token }}",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                success: function () {
+                    alert("Saved! It worked.");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("some error " + String(errorThrown) + String(textStatus) + String(XMLHttpRequest.responseText));
+                }
+            });
+    });
+
+    function actualizarData(obj) {
         event.preventDefault();
         $.ajax({
-            type: "POST",
-            url: "http://localhost:8000/servicios/preguntaT/",
+            type: "PUT",
+            url: "http://127.0.0.1:8000/servicios/pregunta/" +$('#idPregunta').val(),
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {
@@ -95,9 +118,10 @@ $(document).ready(function () {
 
 });
 
-function crearObj(subTema,pregunta, alternativa1, alternativa2, alternativa3,
+function crearObj(subtema,pregunta, alternativa1, alternativa2, alternativa3,
     alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta) {
-    this.id_pregunta = null;
+
+    this.id_pregunta = $('#idPregunta').val();
     this.enunciado = pregunta;
     this.clave1 = alternativa1;
     this.clave2 = alternativa2;
@@ -105,7 +129,7 @@ function crearObj(subTema,pregunta, alternativa1, alternativa2, alternativa3,
     this.clave4 = alternativa4;
     this.clave5 = alternativa5;
     this.estado = 1;
-    this.subtema_id_subtema = parseInt(subTema);
+    this.subtema_id_subtema = parseInt(subtema);
     this.tipo_pregunta_id_tipopregunta = 2;
     this.dificultad_id_dificultad = parseInt(dificultad);
     this.correcta_num = parseInt(correcta);

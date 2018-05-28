@@ -15,6 +15,7 @@
     <title>CachimboGo</title>
 </head>
 <body>
+    <input type="hidden" value="{{ pregunta.id_pregunta }}" id="idPregunta">
     <div align="center" style="height: 100px; background: rgb(0, 195, 255)">
       <div class="titlec">CachimboGO</div>
     </div>
@@ -30,7 +31,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="labelc" for="asginaturas">Tema:</label>
-                      <select class="form-control" id="selectAsiganturas">
+                      <select class="form-control" id="selectAsignaturas">
                         <option >Seleccione Asignatura</option>
                         {% for asignatura in asignaturas %}
                         <option value="{{asignatura.id_asignatura}}">{{asignatura.nombre}}</option>
@@ -74,31 +75,31 @@
               <form>
                 <div class="form-group">
                   <label class="labelc" for="Pregunta">Escriba su pregunta:</label>
-                  <input type="text" class="form-control form-control-lg" id="Pregunta" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Pregunta" placeholder="" value="{{ pregunta.enunciado }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="Alternativa1">Alternativa 1</label>
-                  <input type="text" class="form-control form-control-lg" id="Alternativa1" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Alternativa1" placeholder="" value="{{ pregunta.clave1 }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="Alternativa2">Alternativa 2</label>
-                  <input type="text" class="form-control form-control-lg" id="Alternativa2" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Alternativa2" placeholder="" value="{{ pregunta.clave2 }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="Alternativa3">Alternativa 3</label>
-                  <input type="text" class="form-control form-control-lg" id="Alternativa3" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Alternativa3" placeholder="" value="{{ pregunta.clave3 }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="Alternativa4">Alternativa 4</label>
-                  <input type="text" class="form-control form-control-lg" id="Alternativa4" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Alternativa4" placeholder="" value="{{ pregunta.clave4 }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="Alternativa5">Alternativa 5</label>
-                  <input type="text" class="form-control form-control-lg" id="Alternativa5" placeholder="">
+                  <input type="text" class="form-control form-control-lg" id="Alternativa5" placeholder="" value="{{ pregunta.clave5 }}">
                 </div>
                 <div class="form-group">
                   <label class="labelc" for="info">Informacion:</label>
-                  <textarea class="form-control form-control-lg" rows="5" id="info"></textarea>
+                  <textarea class="form-control form-control-lg" rows="5" id="info">{{ pregunta.informacion }}</textarea>
                 </div>
               </form>
                 <div class="row">
@@ -146,10 +147,10 @@
     </div>
 </body>
 <script>
-    document.ready = document.getElementById("selectDificultad").value = {{pregunta.dificultad_id_dificultad}}+"";
-    document.ready = document.getElementById("selectAlternativa").value = {{pregunta.correcta_num}}+"";
-    document.ready = document.getElementById("selectSubTemas").value = {{pregunta.subtema_id_subtema}}+"";
-    document.ready = document.getElementById("selectTemas").value = {{tema}}+"";
-    document.ready = document.getElementById("selectAsiganturas").value = {{asignatura}}+"";
+    document.ready = document.getElementById("selectDificultad").value = "{{pregunta.dificultad_id_dificultad.id_dificultad}}";
+    document.ready = document.getElementById("selectAlternativa").value = "{{pregunta.correcta_num}}";
+    document.ready = document.getElementById("selectSubTemas").value = "{{pregunta.subtema_id_subtema.id_subtema}}";
+    document.ready = document.getElementById("selectTemas").value = "{{tema}}";
+    document.ready = document.getElementById("selectAsignaturas").value = "{{asignatura}}";
 </script>
 </html>

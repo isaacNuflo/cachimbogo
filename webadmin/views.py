@@ -19,15 +19,15 @@ def questionBrowser(request):
 
 def questionUpdate(request,id):
     pregunta = Pregunta.objects.get(pk=id)
-    subtema = Subtema.objects.get(pk=pregunta.subtema_id_subtema)
-    tema = Tema.objects.get(pk=subtema.tema_id_tema)
+    subtema = Subtema.objects.get(pk=pregunta.subtema_id_subtema.id_subtema)
+    tema = Tema.objects.get(pk=subtema.tema_id_tema.id_tema)
     subtemas = Subtema.objects.filter(tema_id_tema__id_tema=tema.id_tema)
-    temas = Tema.objects.all()
+    temas = Tema.objects.filter(asignatura_id_asignatura__id_asignatura=tema.asignatura_id_asignatura.id_asignatura)
     asignaturas = Asignatura.objects.all()
     context = {
         'pregunta' : pregunta,
         'tema' : tema.id_tema,
-        'asignatura' : tema.asignatura_id_asignatura,
+        'asignatura' : tema.asignatura_id_asignatura.id_asignatura,
         'subtemas' : subtemas,
         'temas' : temas,
         'asignaturas' : asignaturas,
