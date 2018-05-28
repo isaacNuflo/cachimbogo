@@ -44,12 +44,10 @@ INSTALLED_APPS = [
     'drf_generators',
     'corsheaders',
     'dj_database_url',
-    'gunicorn',
-    'whitenoise',
 ]
 
 MIDDLEWARE = [
-     'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'CGO.urls'
@@ -160,8 +159,7 @@ REST_FRAMEWORK = {
 
 # Update database configuration with $DATABASE_URL.
   
-db_from_env = dj_database_url.config(conn_max_age=500)  
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config(default='mysql://root:asd123@localhost:3306/u736411459_bd')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATIC_URL = '/static/'

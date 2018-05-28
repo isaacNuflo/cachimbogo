@@ -50,9 +50,10 @@ $(document).ready(function () {
                 table.append(tr);
                 var tdId = document.createElement("td");
                 var tdEnunciado = document.createElement("td");
-                var btn = document.createElement("BUTTON");
-                btn.className = "btn btn-outline-primary";
-                btn.id = "detalles";
+                var btn = document.createElement("button");
+                btn.setAttribute('className','btn btn-outline-primary');
+                btn.setAttribute('id','detalles');
+                btn.onclick = function(){window.location.href = "http://localhost:8000/webadmin/questionUpdate/"+datos[value].id_pregunta; };
                 tr.appendChild(tdId);
                 tr.appendChild(tdEnunciado);
                 tr.appendChild(btn);
