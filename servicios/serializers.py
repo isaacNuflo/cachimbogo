@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioAsignatura
+from servicios.models import *
 
 
 class AsignaturaSerializer(ModelSerializer):
@@ -33,7 +33,7 @@ class SubtemaTemaSerializer(ModelSerializer):
 class TemaSerializer(ModelSerializer):
     asignatura = SerializerMethodField()
 
-    def get_asignatura(self,tema):
+    def get_asignatura(self, tema):
       asignatura = AsignaturaSerializer(tema.id_asignatura,many=False,read_only=True)
       return asignatura.data
 
@@ -45,7 +45,7 @@ class TemaSerializer(ModelSerializer):
 class SubtemaSerializer(ModelSerializer):
     tema = SerializerMethodField()
 
-    def get_tema(self,subtema):
+    def get_tema(self, subtema):
         tema = TemaSerializer(subtema.id_tema,many=False,read_only=True)
         return tema.data
 
@@ -104,8 +104,22 @@ class UsuarioSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class UsuarioHasAsignaturaSerializer(ModelSerializer):
+class UsuarioAsignaturaSerializer(ModelSerializer):
 
     class Meta:
         model = UsuarioAsignatura
+        fields = '__all__'
+
+
+class UsuarioTemaSerializer(ModelSerializer):
+
+    class Meta:
+        model = UsuarioTema
+        fields = '__all__'
+
+
+class UsuarioSubtemaSerializer(ModelSerializer):
+
+    class Meta:
+        model = UsuarioSubtema
         fields = '__all__'

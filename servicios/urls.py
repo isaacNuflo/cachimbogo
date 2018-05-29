@@ -1,10 +1,9 @@
-from django.conf.urls import include, url
+from django.conf.urls import url
 try:
   from django.conf.urls import patterns
 except ImportError:
   pass
 import django
-from django.contrib import admin
 from servicios import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -44,8 +43,8 @@ if django.VERSION[1] < 10:
     url(r'^usuario/(?P<id>[0-9]+)$', views.UsuarioAPIView.as_view()),
     url(r'^usuario/$', views.UsuarioAPIListView.as_view()),
   
-    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
-    url(r'^usuariohasasignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
+    url(r'^usuarioAsignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
+    url(r'^usuarioAsignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
   
   )
 else:
@@ -84,8 +83,14 @@ else:
     url(r'^usuario/(?P<id>[0-9]+)$', views.UsuarioAPIView.as_view()),
     url(r'^usuario/$', views.UsuarioAPIListView.as_view()),
   
-    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
-    url(r'^usuariohasasignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
+    url(r'^usuarioAsignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
+    url(r'^usuarioAsignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
+
+    url(r'^usuarioTema/(?P<id>[0-9]+)$', views.UsuarioTemaAPIView.as_view()),
+    url(r'^usuarioTema/$', views.UsuarioTemaAPIListView.as_view()),
+
+    url(r'^usuarioSubtema/(?P<id>[0-9]+)$', views.UsuarioSubtemaAPIView.as_view()),
+    url(r'^usuarioSubtema/$', views.UsuarioSubtemaAPIListView.as_view()),
   
   ]
 urlpatterns = format_suffix_patterns(urlpatterns)

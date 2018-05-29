@@ -2,8 +2,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
-from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioAsignatura
+from servicios.serializers import *
+from servicios.models import *
 import random
 
 
@@ -493,7 +493,7 @@ class UsuarioAsignaturaAPIView(APIView):
     def get(self, request, id, format=None):
         try:
             item = UsuarioAsignatura.objects.get(pk=id)
-            serializer = UsuarioHasAsignaturaSerializer(item)
+            serializer = UsuarioAsignaturaSerializer(item)
             return Response(serializer.data)
         except UsuarioAsignatura.DoesNotExist:
             return Response(status=404)
@@ -503,7 +503,7 @@ class UsuarioAsignaturaAPIView(APIView):
             item = UsuarioAsignatura.objects.get(pk=id)
         except UsuarioAsignatura.DoesNotExist:
             return Response(status=404)
-        serializer = UsuarioHasAsignaturaSerializer(item, data=request.data)
+        serializer = UsuarioAsignaturaSerializer(item, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -525,11 +525,109 @@ class UsuarioAsignaturaAPIListView(APIView):
 
     def get(self, request, format=None):
         items = UsuarioAsignatura.objects.all()
-        serializer = UsuarioHasAsignaturaSerializer(items, many=True)
+        serializer = UsuarioAsignaturaSerializer(items, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = UsuarioHasAsignaturaSerializer(data=request.data)
+        serializer = UsuarioAsignaturaSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+
+class UsuarioTemaAPIView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def get(self, request, id, format=None):
+        try:
+            item = UsuarioTema.objects.get(pk=id)
+            serializer = UsuarioTemaSerializer(item)
+            return Response(serializer.data)
+        except UsuarioTema.DoesNotExist:
+            return Response(status=404)
+
+    def put(self, request, id, format=None):
+        try:
+            item = UsuarioTema.objects.get(pk=id)
+        except UsuarioTema.DoesNotExist:
+            return Response(status=404)
+        serializer = UsuarioTemaSerializer(item, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+
+    def delete(self, request, id, format=None):
+        try:
+            item = UsuarioTema.objects.get(pk=id)
+        except UsuarioTema.DoesNotExist:
+            return Response(status=404)
+        item.delete()
+        return Response(status=204)
+
+
+class UsuarioTemaAPIListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def get(self, request, format=None):
+        items = UsuarioTema.objects.all()
+        serializer = UsuarioTemaSerializer(items, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = UsuarioTemaSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+
+class UsuarioSubtemaAPIView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def get(self, request, id, format=None):
+        try:
+            item = UsuarioSubtema.objects.get(pk=id)
+            serializer = UsuarioSubtemaSerializer(item)
+            return Response(serializer.data)
+        except UsuarioSubtema.DoesNotExist:
+            return Response(status=404)
+
+    def put(self, request, id, format=None):
+        try:
+            item = UsuarioSubtema.objects.get(pk=id)
+        except UsuarioSubtema.DoesNotExist:
+            return Response(status=404)
+        serializer = UsuarioSubtemaSerializer(item, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+
+    def delete(self, request, id, format=None):
+        try:
+            item = UsuarioSubtema.objects.get(pk=id)
+        except UsuarioSubtema.DoesNotExist:
+            return Response(status=404)
+        item.delete()
+        return Response(status=204)
+
+
+class UsuarioSubtemaAPIListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def get(self, request, format=None):
+        items = UsuarioSubtema.objects.all()
+        serializer = UsuarioSubtemaSerializer(items, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = UsuarioSubtemaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
