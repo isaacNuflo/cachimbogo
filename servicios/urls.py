@@ -45,6 +45,12 @@ if django.VERSION[1] < 10:
   
     url(r'^usuarioAsignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
     url(r'^usuarioAsignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
+
+    url(r'^usuarioTema/(?P<id>[0-9]+)$', views.UsuarioTemaAPIView.as_view()),
+    url(r'^usuarioTema/$', views.UsuarioTemaAPIListView.as_view()),
+
+    url(r'^usuarioSubtema/(?P<id>[0-9]+)$', views.UsuarioSubtemaAPIView.as_view()),
+    url(r'^usuarioSubtema/$', views.UsuarioSubtemaAPIListView.as_view()),
   
   )
 else:
