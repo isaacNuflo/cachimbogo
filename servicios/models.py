@@ -13,8 +13,6 @@ from django.db import models
 class Asignatura(models.Model):
     id_asignatura = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=30)
-    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    completado = models.IntegerField(blank=True, null=True)
 
     class Meta:
         db_table = 'asignatura'
@@ -31,20 +29,16 @@ class Dificultad(models.Model):
 class Tema(models.Model):
     id_tema = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    completado = models.IntegerField(blank=True, null=True)
-    asignatura_id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
+    id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='id_asignatura')
 
     class Meta:
-        db_table = 'tema'       
+        db_table = 'tema'
 
 
 class Subtema(models.Model):
-    id_subtema = models.AutoField(primary_key=True)
+    id_subtema = models.SmallIntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    completado = models.IntegerField(blank=True, null=True)
-    tema_id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='TEMA_id_tema')  # Field name made lowercase.
+    id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='id_tema')
 
     class Meta:
         db_table = 'subtema'
@@ -67,23 +61,14 @@ class Pregunta(models.Model):
     clave4 = models.CharField(max_length=200)
     clave5 = models.CharField(max_length=200)
     estado = models.IntegerField(blank=True, null=True)
-    subtema_id_subtema = models.ForeignKey(Subtema, models.DO_NOTHING, db_column='SUBTEMA_id_subtema')  # Field name made lowercase.
-    tipo_pregunta_id_tipopregunta = models.ForeignKey(TipoPregunta, models.DO_NOTHING, db_column='TIPO_PREGUNTA_id_tipopregunta')  # Field name made lowercase.
-    dificultad_id_dificultad = models.ForeignKey(Dificultad, models.DO_NOTHING, db_column='DIFICULTAD_id_dificultad')  # Field name made lowercase.
+    id_subtema = models.ForeignKey(Subtema, models.DO_NOTHING, db_column='id_subtema')
+    id_tipopregunta = models.ForeignKey(TipoPregunta, models.DO_NOTHING, db_column='id_tipopregunta')
+    id_dificultad = models.ForeignKey(Dificultad, models.DO_NOTHING, db_column='id_dificultad')
     correcta_num = models.SmallIntegerField(blank=True, null=True)
     informacion = models.CharField(max_length=800, blank=True, null=True)
 
     class Meta:
         db_table = 'pregunta'
-
-
-class Respuesta(models.Model):
-    id_respuesta = models.AutoField(primary_key=True)
-    acertada = models.IntegerField(blank=True, null=True)
-    pregunta_id_pregunta = models.ForeignKey(Pregunta, models.DO_NOTHING, db_column='PREGUNTA_id_pregunta')  # Field name made lowercase.
-
-    class Meta:
-        db_table = 'respuesta'
 
 
 class Usuario(models.Model):
@@ -92,16 +77,48 @@ class Usuario(models.Model):
     password = models.CharField(max_length=20)
     nombres = models.CharField(max_length=80, blank=True, null=True)
     apellidos = models.CharField(max_length=80, blank=True, null=True)
-    correo = models.CharField(max_length=50, blank=True, null=True)
+    correo = models.CharField(max_length=30, blank=True, null=True)
+    monedas = models.SmallIntegerField(blank=True, null=True)
 
     class Meta:
         db_table = 'usuario'
 
 
-class UsuarioHasAsignatura(models.Model):
-    usuario_id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='USUARIO_id_usuario')  # Field name made lowercase.
-    asignatura_id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='ASIGNATURA_id_asignatura')  # Field name made lowercase.
+class Respuesta(models.Model):
+    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_pregunta = models.ForeignKey(Pregunta, models.DO_NOTHING, db_column='id_pregunta')
+    acertada = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        db_table = 'usuario_has_asignatura'
-        unique_together = (('usuario_id_usuario', 'asignatura_id_asignatura'),)
+        db_table = 'respuesta'
+        unique_together = (('id_usuario', 'id_pregunta'),)
+
+
+class UsuarioAsignatura(models.Model):
+    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='id_asignatura')
+    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        db_table = 'usuario_asignatura'
+        unique_together = (('id_usuario', 'id_asignatura'),)
+
+
+class UsuarioSubtema(models.Model):
+    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_subtema = models.ForeignKey(Subtema, models.DO_NOTHING, db_column='id_subtema')
+    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        db_table = 'usuario_subtema'
+        unique_together = (('id_usuario', 'id_subtema'),)
+
+
+class UsuarioTema(models.Model):
+    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='id_tema')
+    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        db_table = 'usuario_tema'
+        unique_together = (('id_usuario', 'id_tema'),)

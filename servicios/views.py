@@ -1,10 +1,10 @@
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from servicios.serializers import PreguntaTSerializer, AsignaturaSerializer, DificultadSerializer, TemaSerializer,SubtemaTemaSerializer,TemaAsignaturaSerializer, SubtemaSerializer, TipoPreguntaSerializer, PreguntaSerializer, RespuestaSerializer, UsuarioSerializer, UsuarioHasAsignaturaSerializer
-from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioHasAsignatura
+from servicios.models import Asignatura, Dificultad, Tema, Subtema, TipoPregunta, Pregunta, Respuesta, Usuario, UsuarioAsignatura
+import random
 
 
 class AsignaturaAPIView(APIView):
@@ -115,7 +115,7 @@ class SubtemaTemaAPIView(APIView):
 
     def get(self, request, id, format=None):
         try:
-            item = Subtema.objects.filter(tema_id_tema__pk=id)
+            item = Subtema.objects.filter(id_tema__pk=id)
             serializer = SubtemaTemaSerializer(item,many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -128,7 +128,7 @@ class TemaAsignaturaAPIView(APIView):
 
     def get(self, request, id, format=None):
         try:
-            item = Tema.objects.filter(asignatura_id_asignatura__pk=id)
+            item = Tema.objects.filter(id_asignatura__pk=id)
             serializer = TemaAsignaturaSerializer(item,many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -325,7 +325,7 @@ class PreguntaTAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, id , format=None):
-        items = Pregunta.objects.filter(subtema_id_subtema__id_subtema=id)
+        items = Pregunta.objects.filter(id_subtema__id_subtema=id)
         serializer = PreguntaTSerializer(items, many=True)
         return Response(serializer.data)
 
@@ -336,6 +336,34 @@ class PreguntaTAPIListView(APIView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
+class PreguntaRAPIListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def get(self, request, id , format=None):
+        items = Pregunta.objects.filter(id_subtema__id_subtema=id)
+        lists = []
+        response = {}
+        first = items[0].id_pregunta
+        last = items.last().id_pregunta
+        i = 1
+        while i <= 7:
+            rand = random.randint(first, last)
+            if not lists:
+                lists.append(rand)
+                response[str(i)] = self.get_answer(rand)
+                i = i + 1
+            elif rand not in lists:
+                lists.append(rand)
+                response[str(i)] = self.get_answer(rand)
+                i = i + 1
+
+        return Response(response)
+
+    def get_answer(self, rand):
+        pregunta = Pregunta.objects.get(pk=rand)
+        serializer = PreguntaTSerializer(pregunta, many=False)
+        return serializer.data
 
 class PreguntaAPIListView(APIView):
 
@@ -457,23 +485,23 @@ class UsuarioAPIListView(APIView):
         return Response(serializer.errors, status=400)
 
 
-class UsuarioHasAsignaturaAPIView(APIView):
+class UsuarioAsignaturaAPIView(APIView):
     
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
         try:
-            item = UsuarioHasAsignatura.objects.get(pk=id)
+            item = UsuarioAsignatura.objects.get(pk=id)
             serializer = UsuarioHasAsignaturaSerializer(item)
             return Response(serializer.data)
-        except UsuarioHasAsignatura.DoesNotExist:
+        except UsuarioAsignatura.DoesNotExist:
             return Response(status=404)
 
     def put(self, request, id, format=None):
         try:
-            item = UsuarioHasAsignatura.objects.get(pk=id)
-        except UsuarioHasAsignatura.DoesNotExist:
+            item = UsuarioAsignatura.objects.get(pk=id)
+        except UsuarioAsignatura.DoesNotExist:
             return Response(status=404)
         serializer = UsuarioHasAsignaturaSerializer(item, data=request.data)
         if serializer.is_valid():
@@ -483,20 +511,20 @@ class UsuarioHasAsignaturaAPIView(APIView):
 
     def delete(self, request, id, format=None):
         try:
-            item = UsuarioHasAsignatura.objects.get(pk=id)
-        except UsuarioHasAsignatura.DoesNotExist:
+            item = UsuarioAsignatura.objects.get(pk=id)
+        except UsuarioAsignatura.DoesNotExist:
             return Response(status=404)
         item.delete()
         return Response(status=204)
 
 
-class UsuarioHasAsignaturaAPIListView(APIView):
+class UsuarioAsignaturaAPIListView(APIView):
     
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = UsuarioHasAsignatura.objects.all()
+        items = UsuarioAsignatura.objects.all()
         serializer = UsuarioHasAsignaturaSerializer(items, many=True)
         return Response(serializer.data)
 

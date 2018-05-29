@@ -129,9 +129,9 @@ function crearObj(subtema,pregunta, alternativa1, alternativa2, alternativa3,
     this.clave4 = alternativa4;
     this.clave5 = alternativa5;
     this.estado = 1;
-    this.subtema_id_subtema = parseInt(subtema);
-    this.tipo_pregunta_id_tipopregunta = 2;
-    this.dificultad_id_dificultad = parseInt(dificultad);
+    this.id_subtema = parseInt(subtema);
+    this.id_tipopregunta = 2;
+    this.id_dificultad = parseInt(dificultad);
     this.correcta_num = parseInt(correcta);
     this.informacion = informacion;
 }

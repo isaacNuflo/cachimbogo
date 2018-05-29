@@ -87,9 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'u736411459_bd',
-        'USER': 'root',
-        'PASSWORD': 'asd123',
-        'HOST': 'localhost',
+        'USER': 'u736411459_alexk',
+        'PASSWORD': 'ruEvGTzVY1F7',
+        'HOST': 'sql141.main-hosting.eu',
         'PORT': '3306',
     }
 }
@@ -159,7 +159,7 @@ REST_FRAMEWORK = {
 
 # Update database configuration with $DATABASE_URL.
   
-DATABASES['default'] = dj_database_url.config(default='mysql://root:asd123@localhost:3306/u736411459_bd')
+DATABASES['default'] = dj_database_url.config(default='mysql://u736411459_alexk:ruEvGTzVY1F7@sql141.main-hosting.eu:3306/u736411459_bd')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATIC_URL = '/static/'

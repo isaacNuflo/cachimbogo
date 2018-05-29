@@ -35,6 +35,8 @@ if django.VERSION[1] < 10:
 
     url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
     url(r'^preguntaT/(?P<id>[0-9]+)$', views.PreguntaTAPIListView.as_view()),
+
+    url(r'^preguntaR/(?P<id>[0-9]+)$', views.PreguntaRAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
@@ -42,8 +44,8 @@ if django.VERSION[1] < 10:
     url(r'^usuario/(?P<id>[0-9]+)$', views.UsuarioAPIView.as_view()),
     url(r'^usuario/$', views.UsuarioAPIListView.as_view()),
   
-    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioHasAsignaturaAPIView.as_view()),
-    url(r'^usuariohasasignatura/$', views.UsuarioHasAsignaturaAPIListView.as_view()),
+    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
+    url(r'^usuariohasasignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
   
   )
 else:
@@ -73,6 +75,8 @@ else:
 
     url(r'^preguntaT/$', views.PreguntaTAPIListView.as_view()),
     url(r'^preguntaT/(?P<id>[0-9]+)$', views.PreguntaTAPIListView.as_view()),
+
+    url(r'^preguntaR/(?P<id>[0-9]+)$', views.PreguntaRAPIListView.as_view()),
   
     url(r'^respuesta/(?P<id>[0-9]+)$', views.RespuestaAPIView.as_view()),
     url(r'^respuesta/$', views.RespuestaAPIListView.as_view()),
@@ -80,8 +84,8 @@ else:
     url(r'^usuario/(?P<id>[0-9]+)$', views.UsuarioAPIView.as_view()),
     url(r'^usuario/$', views.UsuarioAPIListView.as_view()),
   
-    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioHasAsignaturaAPIView.as_view()),
-    url(r'^usuariohasasignatura/$', views.UsuarioHasAsignaturaAPIListView.as_view()),
+    url(r'^usuariohasasignatura/(?P<id>[0-9]+)$', views.UsuarioAsignaturaAPIView.as_view()),
+    url(r'^usuariohasasignatura/$', views.UsuarioAsignaturaAPIListView.as_view()),
   
   ]
 urlpatterns = format_suffix_patterns(urlpatterns)
