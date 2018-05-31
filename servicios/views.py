@@ -341,7 +341,7 @@ class PreguntaRAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, id , format=None):
-        items = Pregunta.objects.filter(id_subtema__id_subtema=id)
+        items = Pregunta.objects.filter(id_subtema__id_subtema=id, id_tipopregunta__id_tipopregunta=1)
         lists = []
         response = {}
         first = items[0].id_pregunta
