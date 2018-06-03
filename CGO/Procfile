@@ -1,1 +1,1 @@
-web: gunicorn CGO.wsgi
+web: gunicorn CGO.wsgi —-log-file -
