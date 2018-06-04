@@ -14,7 +14,7 @@ urlpatterns = [
     path('tema/<int:id>', views.TemaAPIView.as_view()),
     path('tema/', views.TemaAPIListView.as_view()),
 
-    path('tema-asignatura/<int:id>',views.TemaAsignaturaAPIView.as_view),
+    path('tema-asignatura/<int:id>',views.TemaAsignaturaAPIView.as_view()),
 
     path('subtema-tema/<int:id>',views.SubtemaTemaAPIView.as_view()),
 
