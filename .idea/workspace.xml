@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CGO/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/static/js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/Script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CGO/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
@@ -28,6 +30,33 @@
               <folding>
                 <element signature="e#305#314#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/static/js/Script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-552">
+              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionUpdate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionUpdate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1487">
+              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionBrowser.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-671">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -49,14 +78,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" />
-        <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" />
         <option value="$PROJECT_DIR$/servicios/models.py" />
         <option value="$PROJECT_DIR$/webadmin/models.py" />
         <option value="$PROJECT_DIR$/webadmin/views.py" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
-        <option value="$PROJECT_DIR$/webadmin/static/js/Script.js" />
-        <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
         <option value="$PROJECT_DIR$/servicios/serializers.py" />
         <option value="$PROJECT_DIR$/servicios/views.py" />
         <option value="$PROJECT_DIR$/CGO/runtime.txt" />
@@ -68,6 +94,9 @@
         <option value="$PROJECT_DIR$/Pipfile.lock" />
         <option value="$PROJECT_DIR$/CGO/settings.py" />
         <option value="$PROJECT_DIR$/CGO/Procfile" />
+        <option value="$PROJECT_DIR$/webadmin/static/js/Script.js" />
+        <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
+        <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
       </list>
     </option>
   </component>
@@ -105,6 +134,24 @@
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
               <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
               <item name="CGO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
@@ -262,6 +309,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5019531" side_tool="true" weight="0.28827587" />
@@ -482,31 +530,13 @@
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/npm.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionUpdate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" column="29" lean-forward="true" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/js/Script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servicios/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#468#507#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -614,6 +644,27 @@
           <folding>
             <element signature="e#305#314#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/js/Script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-552">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionUpdate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1487">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-671">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
         </state>
       </provider>
     </entry>

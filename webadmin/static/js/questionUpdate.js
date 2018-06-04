@@ -18,14 +18,14 @@ $(document).ready(function () {
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "http://127.0.0.1:8000/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            var url = "http://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "http://127.0.0.1:8000/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            var url = "http://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 event.preventDefault();
             $.ajax({
                 type: "DELETE",
-                url: "http://127.0.0.1:8000/servicios/pregunta/" +$('#idPregunta').val(),
+                url: "http://cachimbogo.herokuapp.com/servicios/pregunta/" +$('#idPregunta').val(),
                 csrfmiddlewaretoken: "{{ csrf_token }}",
                 headers: {
                     'Accept': 'application/json',
@@ -79,7 +79,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "PUT",
-            url: "http://127.0.0.1:8000/servicios/pregunta/" +$('#idPregunta').val(),
+            url: "http://cachimbogo.herokuapp.com/servicios/pregunta/" +$('#idPregunta').val(),
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {
