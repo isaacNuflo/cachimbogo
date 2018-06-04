@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +26,7 @@
       <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/static/js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1164">
+            <state relative-caret-position="374">
               <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
@@ -32,17 +35,44 @@
       <file leaf-file-name="questionUpdate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionUpdate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-892">
+            <state relative-caret-position="1054">
               <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionBrowser.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="questionBrowser.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="527">
               <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionUpdate.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1396">
+              <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionBrowser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -55,8 +85,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servicios/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+            <state relative-caret-position="340">
+              <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -80,12 +110,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" />
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" />
         <option value="$PROJECT_DIR$/servicios/models.py" />
         <option value="$PROJECT_DIR$/webadmin/models.py" />
         <option value="$PROJECT_DIR$/webadmin/views.py" />
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
         <option value="$PROJECT_DIR$/servicios/serializers.py" />
         <option value="$PROJECT_DIR$/servicios/views.py" />
         <option value="$PROJECT_DIR$/CGO/runtime.txt" />
@@ -100,6 +127,9 @@
         <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
         <option value="$PROJECT_DIR$/servicios/urls.py" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" />
       </list>
     </option>
   </component>
@@ -126,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,7 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,7 +372,6 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -354,6 +383,7 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,13 +557,6 @@
     <entry file="file://$PROJECT_DIR$/webadmin/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="153" column="91" lean-forward="true" selection-start-line="153" selection-start-column="91" selection-end-line="153" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/npm.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -628,13 +651,6 @@
     <entry file="file://$PROJECT_DIR$/static/file.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -661,14 +677,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1164">
+        <state relative-caret-position="374">
           <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionUpdate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-892">
+        <state relative-caret-position="1054">
           <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
         </state>
       </provider>
@@ -676,17 +692,10 @@
     <entry file="file://$PROJECT_DIR$/staticfiles/js/Script.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
-          <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servicios/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+        <state relative-caret-position="340">
+          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -695,8 +704,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="527">
           <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1396">
+          <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
         </state>
       </provider>
     </entry>
