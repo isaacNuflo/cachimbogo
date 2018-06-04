@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/servicios/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionBrowser.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="questionBrowser.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-671">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -52,10 +52,10 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servicios/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="391">
               <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -98,8 +98,8 @@
         <option value="$PROJECT_DIR$/CGO/Procfile" />
         <option value="$PROJECT_DIR$/webadmin/static/js/Script.js" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
-        <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
         <option value="$PROJECT_DIR$/servicios/urls.py" />
+        <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
       </list>
     </option>
   </component>
@@ -142,6 +142,37 @@
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
               <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
               <item name="servicios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="webadmin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
@@ -496,13 +527,6 @@
     <entry file="file://$PROJECT_DIR$/webadmin/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
@@ -564,6 +588,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -571,6 +598,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding>
+            <element signature="e#637#678#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,23 +673,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-671">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/staticfiles/js/Script.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-467">
+          <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/servicios/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="391">
           <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
         </state>
       </provider>
     </entry>

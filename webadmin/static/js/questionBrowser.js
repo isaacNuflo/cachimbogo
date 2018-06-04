@@ -53,7 +53,7 @@ $(document).ready(function () {
                 var btn = document.createElement("button");
                 btn.setAttribute('className','btn btn-outline-primary');
                 btn.setAttribute('id','detalles');
-                btn.onclick = function(){window.location.href = "http://127.0.0.1:8000/webadmin/questionUpdate/"+datos[value].id_pregunta; };
+                btn.onclick = function(){window.location.href = "https://cachimbogo.herokuapp.com/webadmin/questionUpdate/"+datos[value].id_pregunta; };
                 tr.appendChild(tdId);
                 tr.appendChild(tdEnunciado);
                 tr.appendChild(btn);
