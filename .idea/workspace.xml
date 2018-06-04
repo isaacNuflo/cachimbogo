@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CGO/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CGO/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CGO/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+            <state relative-caret-position="196">
+              <caret line="164" column="9" selection-start-line="164" selection-end-line="164" selection-end-column="9" />
               <folding>
                 <element signature="e#305#314#0" expanded="true" />
               </folding>
@@ -61,7 +60,6 @@
         <option value="$PROJECT_DIR$/servicios/serializers.py" />
         <option value="$PROJECT_DIR$/servicios/views.py" />
         <option value="$PROJECT_DIR$/CGO/runtime.txt" />
-        <option value="$PROJECT_DIR$/CGO/Procfile" />
         <option value="$PROJECT_DIR$/CGO/urls.py" />
         <option value="$PROJECT_DIR$/servicios/urls.py" />
         <option value="$PROJECT_DIR$/webadmin/urls.py" />
@@ -69,6 +67,7 @@
         <option value="$PROJECT_DIR$/requeriments.txt" />
         <option value="$PROJECT_DIR$/Pipfile.lock" />
         <option value="$PROJECT_DIR$/CGO/settings.py" />
+        <option value="$PROJECT_DIR$/CGO/Procfile" />
       </list>
     </option>
   </component>
@@ -121,6 +120,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Django\cachimbogo" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -258,7 +262,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5019531" side_tool="true" weight="0.28827587" />
@@ -521,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CGO/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CGO/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -604,10 +600,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CGO/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+        <state relative-caret-position="196">
+          <caret line="164" column="9" selection-start-line="164" selection-end-line="164" selection-end-column="9" />
           <folding>
             <element signature="e#305#314#0" expanded="true" />
           </folding>
