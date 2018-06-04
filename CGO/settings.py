@@ -27,7 +27,7 @@ SECRET_KEY = 'lby42q-(!any=2p#hfsv+t)(o+a82^%*kd9cjj93h6unb#2hzh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost','127.0.0.1','http://cachimbogo.herokuapp.com/',]
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost','127.0.0.1','cachimbogo.herokuapp.com']
 
 
 # Application definition

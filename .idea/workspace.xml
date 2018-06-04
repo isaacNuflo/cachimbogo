@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="" />
+    <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CGO/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,20 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pipfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pipfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CGO/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="171" column="37" lean-forward="true" selection-start-line="171" selection-start-column="37" selection-end-line="171" selection-end-column="37" />
+            <state relative-caret-position="358">
+              <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
               <folding>
                 <element signature="e#305#314#0" expanded="true" />
               </folding>
@@ -45,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -72,8 +67,8 @@
         <option value="$PROJECT_DIR$/webadmin/urls.py" />
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/requeriments.txt" />
-        <option value="$PROJECT_DIR$/CGO/settings.py" />
         <option value="$PROJECT_DIR$/Pipfile.lock" />
+        <option value="$PROJECT_DIR$/CGO/settings.py" />
       </list>
     </option>
   </component>
@@ -106,11 +101,6 @@
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
               <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
-              <item name="==16.0.0" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
@@ -280,6 +270,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -291,7 +282,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,13 +305,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webadmin/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servicios/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5151">
@@ -479,13 +462,6 @@
     <entry file="file://$PROJECT_DIR$/webadmin/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -611,6 +587,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/file.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -620,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CGO/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="171" column="37" lean-forward="true" selection-start-line="171" selection-start-column="37" selection-end-line="171" selection-end-column="37" />
+        <state relative-caret-position="358">
+          <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
           <folding>
             <element signature="e#305#314#0" expanded="true" />
           </folding>
