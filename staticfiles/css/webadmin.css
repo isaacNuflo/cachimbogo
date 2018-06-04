@@ -1,0 +1,13 @@
+div.titlec {
+    color: black;
+    font-family: 'Lobster';
+    font-size: 350%;
+    padding: 20px 20px 20px 40px;
+    margin: auto;
+}
+
+.labelc{
+    font-family: 'Berkshire Swash';
+    color: black;
+    font-size: 115%;
+}
