@@ -116,8 +116,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8000',
+    'localhost',
     '0.0.0.0',
+    '127.0.0.1',
+    'cachimbogo.herokuapp.com',
 )
 
 CORS_ALLOW_METHODS = (
