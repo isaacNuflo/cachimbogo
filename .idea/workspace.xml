@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/webadmin/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webadmin/static/images/icono.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webadmin/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_internal/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_internal/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_vendor/distlib/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_vendor/distlib/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_vendor/distlib/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/pip/_vendor/distlib/locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/setuptools/package_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/==16.0.0/Lib/site-packages/setuptools/package_index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CGO/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/static/js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionCreate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicios/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/static/css/webadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/css/webadmin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +31,22 @@
       <file leaf-file-name="questionCreate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="130" column="40" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="40" />
+            <state relative-caret-position="238">
+              <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionCreate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionCreate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="133" lean-forward="true" selection-start-line="15" selection-start-column="133" selection-end-line="15" selection-end-column="133" />
             </state>
           </provider>
         </entry>
@@ -50,40 +54,17 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="34" column="92" selection-start-line="34" selection-start-column="92" selection-end-line="34" selection-end-column="92" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1263#1269#0#HTML" expanded="true" />
-                <element signature="e#1269#1275#0#HTML" expanded="true" />
-                <element signature="e#1275#1281#0#HTML" expanded="true" />
-                <element signature="e#1281#1287#0#HTML" expanded="true" />
-                <element signature="e#1287#1293#0#HTML" expanded="true" />
-                <element signature="e#1293#1299#0#HTML" expanded="true" />
-                <element signature="e#1299#1305#0#HTML" expanded="true" />
-                <element signature="e#1461#1467#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/static/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servicios/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#468#507#0" expanded="true" />
-              </folding>
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -91,32 +72,60 @@
       <file leaf-file-name="questionUpdate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="646">
+              <caret line="38" column="116" selection-start-line="38" selection-start-column="116" selection-end-line="38" selection-end-column="116" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionBrowser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servicios/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="80" column="14" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="80" selection-end-column="14" />
+            <state>
+              <caret column="28" selection-start-column="28" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webadmin/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webadmin/static/js/login.js">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CGO/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+              <folding>
+                <element signature="e#305#314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/servicios/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -131,6 +140,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cors</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -140,7 +154,6 @@
         <option value="$PROJECT_DIR$/servicios/models.py" />
         <option value="$PROJECT_DIR$/webadmin/models.py" />
         <option value="$PROJECT_DIR$/servicios/serializers.py" />
-        <option value="$PROJECT_DIR$/servicios/views.py" />
         <option value="$PROJECT_DIR$/CGO/runtime.txt" />
         <option value="$PROJECT_DIR$/CGO/urls.py" />
         <option value="$PROJECT_DIR$/Pipfile" />
@@ -149,18 +162,20 @@
         <option value="$PROJECT_DIR$/CGO/Procfile" />
         <option value="$PROJECT_DIR$/webadmin/static/js/Script.js" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
-        <option value="$PROJECT_DIR$/servicios/urls.py" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
-        <option value="$PROJECT_DIR$/CGO/settings.py" />
         <option value="$PROJECT_DIR$/webadmin/static/js/login.js" />
         <option value="$PROJECT_DIR$/webadmin/urls.py" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/index.html" />
-        <option value="$PROJECT_DIR$/webadmin/views.py" />
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" />
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
-        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/login.html" />
         <option value="$PROJECT_DIR$/webadmin/static/css/login.css" />
+        <option value="$PROJECT_DIR$/webadmin/static/css/webadmin.css" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
+        <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html" />
+        <option value="$PROJECT_DIR$/CGO/settings.py" />
+        <option value="$PROJECT_DIR$/webadmin/views.py" />
+        <option value="$PROJECT_DIR$/servicios/urls.py" />
+        <option value="$PROJECT_DIR$/servicios/views.py" />
       </list>
     </option>
   </component>
@@ -187,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,7 +212,17 @@
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
               <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="CGO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
               <item name="servicios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cachimbogo" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cachimbogo" type="b2602c69:ProjectViewProjectNode" />
@@ -252,6 +276,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,11 +286,12 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Django\cachimbogo\webadmin\templates\webadmin" />
+      <recent name="D:\Django\cachimbogo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Django\cachimbogo\webadmin\static\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Django\cachimbogo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -416,7 +442,6 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -428,7 +453,32 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22526042" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.32965517" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32965517" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49804688" visible="true" weight="0.28827587" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5019531" side_tool="true" weight="0.28827587" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -447,13 +497,10 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webadmin/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionCreate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
@@ -577,16 +624,6 @@
     <entry file="file://$PROJECT_DIR$/CGO/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1396">
@@ -621,16 +658,6 @@
     <entry file="file://$PROJECT_DIR$/staticfiles/js/Script.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CGO/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -638,30 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CGO/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
-          <folding>
-            <element signature="e#305#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionBrowser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -685,36 +692,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/login.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/css/webadmin.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/servicios/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
+        <state relative-caret-position="289">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#468#507#0" expanded="true" />
@@ -722,66 +705,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionCreate.js">
+    <entry file="file://$PROJECT_DIR$/servicios/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="59" column="52" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="484" column="54" lean-forward="true" selection-start-line="484" selection-start-column="54" selection-end-line="484" selection-end-column="54" />
+        <state relative-caret-position="2015">
+          <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="80" column="14" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="80" selection-end-column="14" />
+        <state relative-caret-position="323">
+          <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html">
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="130" column="40" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="40" />
+        <state relative-caret-position="646">
+          <caret line="38" column="116" selection-start-line="38" selection-start-column="116" selection-end-line="38" selection-end-column="116" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="34" column="92" selection-start-line="34" selection-start-column="92" selection-end-line="34" selection-end-column="92" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1263#1269#0#HTML" expanded="true" />
-            <element signature="e#1269#1275#0#HTML" expanded="true" />
-            <element signature="e#1275#1281#0#HTML" expanded="true" />
-            <element signature="e#1281#1287#0#HTML" expanded="true" />
-            <element signature="e#1287#1293#0#HTML" expanded="true" />
-            <element signature="e#1293#1299#0#HTML" expanded="true" />
-            <element signature="e#1299#1305#0#HTML" expanded="true" />
-            <element signature="e#1461#1467#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/css/webadmin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionCreate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/static/js/questionCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="133" lean-forward="true" selection-start-line="15" selection-start-column="133" selection-end-line="15" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CGO/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#305#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/views/decorators/http.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webadmin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

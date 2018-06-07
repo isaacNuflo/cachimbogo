@@ -5,7 +5,9 @@ from rest_framework.parsers import JSONParser
 from servicios.serializers import *
 from servicios.models import *
 import random
+from django.views.decorators.http import require_http_methods
 
+#@require_http_methods(["GET", "POST", "PUT", "DELETE"])
 
 class AsignaturaAPIView(APIView):
 
@@ -340,14 +342,20 @@ class PreguntaRAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, id , format=None):
-        items = Pregunta.objects.filter(id_subtema__id_subtema=id, id_tipopregunta__id_tipopregunta=1)
+    def get(self, request, id, tipo, format=None):
+        items = Pregunta.objects.filter(id_subtema__id_subtema=id, id_tipopregunta__id_tipopregunta=tipo)
         lists = []
         response = {}
         first = items[0].id_pregunta
         last = items.last().id_pregunta
+        if tipo == 1:
+            cantidad = 7
+        elif tipo == 2:
+            cantidad = 10
+        else:
+            return Response(response)
         i = 1
-        while i <= 7:
+        while i <= cantidad:
             rand = random.randint(first, last)
             if not lists:
                 lists.append(rand)

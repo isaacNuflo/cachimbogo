@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Asignatura, Tema, Subtema, Pregunta
 from django.views.decorators.http import require_http_methods
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST", "PUT", "DELETE"])
 def questionCreate(request):
     asignaturas = Asignatura.objects.all()
     context = {
