@@ -5,9 +5,6 @@ from rest_framework.parsers import JSONParser
 from servicios.serializers import *
 from servicios.models import *
 import random
-from django.views.decorators.http import require_http_methods
-
-#@require_http_methods(["GET", "POST", "PUT", "DELETE"])
 
 class AsignaturaAPIView(APIView):
 
@@ -345,7 +342,7 @@ class PreguntaRAPIListView(APIView):
     def get(self, request, id, tipo, format=None):
         items = Pregunta.objects.filter(id_subtema__id_subtema=id, id_tipopregunta__id_tipopregunta=tipo)
         lists = []
-        response = {}
+        response = []
         first = items[0].id_pregunta
         last = items.last().id_pregunta
         if tipo == 1:
@@ -359,11 +356,11 @@ class PreguntaRAPIListView(APIView):
             rand = random.randint(first, last)
             if not lists:
                 lists.append(rand)
-                response[str(i)] = self.get_answer(rand)
+                response.append(self.get_answer(rand))
                 i = i + 1
             elif rand not in lists:
                 lists.append(rand)
-                response[str(i)] = self.get_answer(rand)
+                response.append(self.get_answer(rand))
                 i = i + 1
 
         return Response(response)
@@ -491,6 +488,20 @@ class UsuarioAPIListView(APIView):
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+
+
+class UsuarioAuthAPIListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def post(self, request, format=None):
+        serializer = UsuarioAuthSerializer(data=request.data)
+        try:
+            item = Usuario.objects.get(usuario=serializer.data.get())
+        except Usuario.DoesNotExist:
+            return Response(status=404)
+
+        return Response(serializer.data, status=201)
 
 
 class UsuarioAsignaturaAPIView(APIView):

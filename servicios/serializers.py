@@ -104,6 +104,13 @@ class UsuarioSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class UsuarioAuthSerializer(ModelSerializer):
+
+    class Meta:
+        model = Usuario
+        fields = ('usuario', 'password')
+
+
 class UsuarioAsignaturaSerializer(ModelSerializer):
 
     class Meta:
