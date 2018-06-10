@@ -45,7 +45,7 @@ class AsignaturaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = Asignatura.objects.all()
+        items = Asignatura.objects.exclude(pk=19)
         serializer = AsignaturaSerializer(items, many=True)
         return Response(serializer.data)
 
@@ -336,15 +336,13 @@ class PreguntaTAPIListView(APIView):
         return Response(serializer.errors, status=400)
 
 class PreguntaRAPIListView(APIView):
-    renderer_classes = (JSONRenderer,)
+    #renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
     def get(self, request, id, tipo, format=None):
-        items = Pregunta.objects.filter(id_subtema__id_subtema=id, id_tipopregunta__id_tipopregunta=tipo)
+        items = Pregunta.objects.filter(id_subtema=id, id_tipopregunta=tipo)
         lists = []
         response = []
-        first = items[0].id_pregunta
-        last = items.last().id_pregunta
         if tipo == 1:
             cantidad = 7
         elif tipo == 2:
@@ -353,7 +351,7 @@ class PreguntaRAPIListView(APIView):
             return Response(response)
         i = 1
         while i <= cantidad:
-            rand = random.randint(first, last)
+            rand = random.choice(items).id_pregunta
             if not lists:
                 lists.append(rand)
                 response.append(self.get_answer(rand))

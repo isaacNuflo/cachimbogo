@@ -86,12 +86,12 @@ WSGI_APPLICATION = 'CGO.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd452ggoq1ch6s8',
-        'USER': 'kmhaozmrkunmom',
-        'PASSWORD': 'd6062c5edb802d78a41a44a97343b849aea64395616af3732402552adf9ed53e',
-        'HOST': 'ec2-54-225-96-191.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u736411459_bd',
+        'USER': 'u736411459_alexk',
+        'PASSWORD': 'ruEvGTzVY1F7',
+        'HOST': 'sql141.main-hosting.eu',
+        'PORT': '3306',
     }
 }
 
@@ -158,7 +158,7 @@ REST_FRAMEWORK = {
 
 # Update database configuration with $DATABASE_URL.
   
-DATABASES['default'] = dj_database_url.config(default='postgres://kmhaozmrkunmom:d6062c5edb802d78a41a44a97343b849aea64395616af3732402552adf9ed53e@ec2-54-225-96-191.compute-1.amazonaws.com:5432/d452ggoq1ch6s8')
+DATABASES['default'] = dj_database_url.config(default='mysql://u736411459_alexk:ruEvGTzVY1F7@sql141.main-hosting.eu:3306/u736411459_bd')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATIC_URL = '/static/'
