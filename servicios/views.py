@@ -336,7 +336,7 @@ class PreguntaTAPIListView(APIView):
         return Response(serializer.errors, status=400)
 
 class PreguntaRAPIListView(APIView):
-    #renderer_classes = (JSONRenderer,)
+    renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
     def get(self, request, id, tipo, format=None):
