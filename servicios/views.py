@@ -442,14 +442,6 @@ class UsuarioAPIView(APIView):
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
-    def get(self, request, id, format=None):
-        try:
-            item = Usuario.objects.get(pk=id)
-            serializer = UsuarioSerializer(item)
-            return Response(serializer.data)
-        except Usuario.DoesNotExist:
-            return Response(status=404)
-
     def put(self, request, id, format=None):
         try:
             item = Usuario.objects.get(pk=id)
@@ -475,11 +467,6 @@ class UsuarioAPIListView(APIView):
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = Usuario.objects.all()
-        serializer = UsuarioSerializer(items, many=True)
-        return Response(serializer.data)
-
     def post(self, request, format=None):
         serializer = UsuarioSerializer(data=request.data)
         if serializer.is_valid():
@@ -493,46 +480,13 @@ class UsuarioAuthAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def post(self, request, format=None):
-        serializer = UsuarioAuthSerializer(data=request.data)
         try:
-            item = Usuario.objects.get(usuario=serializer.data.get())
+            item = Usuario.objects.get(usuario=request.data['usuario'], password=request.data['password'])
+            return Response({"auth": True})
         except Usuario.DoesNotExist:
-            return Response(status=404)
+            return Response({"auth": False})
 
-        return Response(serializer.data, status=201)
-
-
-class UsuarioAsignaturaAPIView(APIView):
-    
-    renderer_classes = (JSONRenderer, )
-    parser_classes = (JSONParser,)
-
-    def get(self, request, id, format=None):
-        try:
-            item = UsuarioAsignatura.objects.get(pk=id)
-            serializer = UsuarioAsignaturaSerializer(item)
-            return Response(serializer.data)
-        except UsuarioAsignatura.DoesNotExist:
-            return Response(status=404)
-
-    def put(self, request, id, format=None):
-        try:
-            item = UsuarioAsignatura.objects.get(pk=id)
-        except UsuarioAsignatura.DoesNotExist:
-            return Response(status=404)
-        serializer = UsuarioAsignaturaSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-    def delete(self, request, id, format=None):
-        try:
-            item = UsuarioAsignatura.objects.get(pk=id)
-        except UsuarioAsignatura.DoesNotExist:
-            return Response(status=404)
-        item.delete()
-        return Response(status=204)
+        return Response(status=400)
 
 
 class UsuarioAsignaturaAPIListView(APIView):
@@ -540,112 +494,70 @@ class UsuarioAsignaturaAPIListView(APIView):
     renderer_classes = (JSONRenderer, )
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = UsuarioAsignatura.objects.all()
+    def get(self, request, id, format=None):
+        items = UsuarioAsignatura.objects.filter(id_usuario=id)
         serializer = UsuarioAsignaturaSerializer(items, many=True)
         return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = UsuarioAsignaturaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-
-
-class UsuarioTemaAPIView(APIView):
-    renderer_classes = (JSONRenderer,)
-    parser_classes = (JSONParser,)
-
-    def get(self, request, id, format=None):
-        try:
-            item = UsuarioTema.objects.get(pk=id)
-            serializer = UsuarioTemaSerializer(item)
-            return Response(serializer.data)
-        except UsuarioTema.DoesNotExist:
-            return Response(status=404)
-
-    def put(self, request, id, format=None):
-        try:
-            item = UsuarioTema.objects.get(pk=id)
-        except UsuarioTema.DoesNotExist:
-            return Response(status=404)
-        serializer = UsuarioTemaSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-    def delete(self, request, id, format=None):
-        try:
-            item = UsuarioTema.objects.get(pk=id)
-        except UsuarioTema.DoesNotExist:
-            return Response(status=404)
-        item.delete()
-        return Response(status=204)
 
 
 class UsuarioTemaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = UsuarioTema.objects.all()
+    def get(self, request, id, format=None):
+        items = UsuarioTema.objects.filter(id_usuario=id)
         serializer = UsuarioTemaSerializer(items, many=True)
         return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = UsuarioTemaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-
-
-class UsuarioSubtemaAPIView(APIView):
-    renderer_classes = (JSONRenderer,)
-    parser_classes = (JSONParser,)
-
-    def get(self, request, id, format=None):
-        try:
-            item = UsuarioSubtema.objects.get(pk=id)
-            serializer = UsuarioSubtemaSerializer(item)
-            return Response(serializer.data)
-        except UsuarioSubtema.DoesNotExist:
-            return Response(status=404)
-
-    def put(self, request, id, format=None):
-        try:
-            item = UsuarioSubtema.objects.get(pk=id)
-        except UsuarioSubtema.DoesNotExist:
-            return Response(status=404)
-        serializer = UsuarioSubtemaSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-    def delete(self, request, id, format=None):
-        try:
-            item = UsuarioSubtema.objects.get(pk=id)
-        except UsuarioSubtema.DoesNotExist:
-            return Response(status=404)
-        item.delete()
-        return Response(status=204)
 
 
 class UsuarioSubtemaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = UsuarioSubtema.objects.all()
+    def get(self, request, id, format=None):
+        items = UsuarioSubtema.objects.filter(id_usuario=id)
         serializer = UsuarioSubtemaSerializer(items, many=True)
         return Response(serializer.data)
 
-    def post(self, request, format=None):
+    def post(self, request, id, format=None):
         serializer = UsuarioSubtemaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            subtema = Subtema.objects.get(pk=request.data['id_subtema'])
+            subtemas = Subtema.objects.filter(id_tema=subtema.id_tema.id_tema)
+            u_tema = UsuarioTema.objects.get(id_tema=subtema.id_tema.id_tema, id_usuario= id)
+            if not u_tema:
+                porcentaje = (1/subtemas.count()) * 100
+                u_tema = UsuarioTema(id_usuario=id, id_temas=subtema.id_tema.id_tema, porcentaje=porcentaje)
+                u_tema.save()
+                tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
+                temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
+                u_asignatura = UsuarioAsignatura(id_usuario=id, id_asignatura=tema.id_asignatura.id_asignatura,
+                                                 porcentaje=0.00)
+                u_asignatura.save()
+            else:
+                id_subtemas = []
+                correctos = 0
+                for id_subtema in subtemas:
+                    u_subtema = UsuarioSubtema.objects.get(id_subtema=id_subtema, completado=1)
+                    if u_subtema:
+                        correctos = correctos + 1
+                porcentaje = (correctos.count()/subtemas.count()) * 100
+                u_tema.porcentaje = porcentaje
+                u_tema.save(update_fields=['porcentaje'])
+                if porcentaje == 100.00:
+                    tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
+                    temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
+                    id_temas = []
+                    completos = 0
+                    for id_tema in temas:
+                        u_tema = UsuarioTema.objects.get(id_tema=id_tema, porcentaje=100.00)
+                        completos = completos + 1
+                    u_asignatura = UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura,
+                                                                 id_usuario=id)
+                    porcentaje = (completos.count()/temas.count()) * 100
+                    u_asignatura.porcentaje = porcentaje
+                    u_asignatura.save(update_fields=['porcentaje'])
+
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)

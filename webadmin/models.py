@@ -5,9 +5,17 @@
 #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
-from __future__ import unicode_literals
-
 from django.db import models
+
+
+class Articulo(models.Model):
+    id_articulo = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=25, blank=True, null=True)
+    descripcion = models.CharField(max_length=60, blank=True, null=True)
+    costo = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'articulo'
 
 
 class Asignatura(models.Model):
@@ -24,6 +32,19 @@ class Dificultad(models.Model):
 
     class Meta:
         db_table = 'dificultad'
+
+
+class Usuario(models.Model):
+    id_usuario = models.AutoField(primary_key=True)
+    usuario = models.CharField(unique=True, max_length=20)
+    password = models.CharField(max_length=20)
+    nombres = models.CharField(max_length=80, blank=True, null=True)
+    apellidos = models.CharField(max_length=80, blank=True, null=True)
+    correo = models.CharField(unique=True, max_length=30, blank=True, null=True)
+    monedas = models.SmallIntegerField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'usuario'
 
 
 class Tema(models.Model):
@@ -71,21 +92,8 @@ class Pregunta(models.Model):
         db_table = 'pregunta'
 
 
-class Usuario(models.Model):
-    id_usuario = models.AutoField(primary_key=True)
-    usuario = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)
-    nombres = models.CharField(max_length=80, blank=True, null=True)
-    apellidos = models.CharField(max_length=80, blank=True, null=True)
-    correo = models.CharField(max_length=30, blank=True, null=True)
-    monedas = models.SmallIntegerField(blank=True, null=True)
-
-    class Meta:
-        db_table = 'usuario'
-
-
 class Respuesta(models.Model):
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_usuario = models.OneToOneField(Usuario, models.DO_NOTHING, db_column='id_usuario', primary_key=True)
     id_pregunta = models.ForeignKey(Pregunta, models.DO_NOTHING, db_column='id_pregunta')
     acertada = models.IntegerField(blank=True, null=True)
 
@@ -94,8 +102,17 @@ class Respuesta(models.Model):
         unique_together = (('id_usuario', 'id_pregunta'),)
 
 
+class UsuarioArticulo(models.Model):
+    id_usuario = models.OneToOneField(Usuario, models.DO_NOTHING, db_column='id_usuario', primary_key=True)
+    id_articulo = models.ForeignKey(Articulo, models.DO_NOTHING, db_column='id_articulo')
+
+    class Meta:
+        db_table = 'usuario_articulo'
+        unique_together = (('id_usuario', 'id_articulo'),)
+
+
 class UsuarioAsignatura(models.Model):
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_usuario = models.OneToOneField(Usuario, models.DO_NOTHING, db_column='id_usuario', primary_key=True)
     id_asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, db_column='id_asignatura')
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 
@@ -105,9 +122,9 @@ class UsuarioAsignatura(models.Model):
 
 
 class UsuarioSubtema(models.Model):
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_usuario = models.OneToOneField(Usuario, models.DO_NOTHING, db_column='id_usuario', primary_key=True)
     id_subtema = models.ForeignKey(Subtema, models.DO_NOTHING, db_column='id_subtema')
-    porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    completado = models.IntegerField(blank=True, null=True)
 
     class Meta:
         db_table = 'usuario_subtema'
@@ -115,7 +132,7 @@ class UsuarioSubtema(models.Model):
 
 
 class UsuarioTema(models.Model):
-    id_usuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='id_usuario')
+    id_usuario = models.OneToOneField(Usuario, models.DO_NOTHING, db_column='id_usuario', primary_key=True)
     id_tema = models.ForeignKey(Tema, models.DO_NOTHING, db_column='id_tema')
     porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 

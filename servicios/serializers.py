@@ -130,3 +130,17 @@ class UsuarioSubtemaSerializer(ModelSerializer):
     class Meta:
         model = UsuarioSubtema
         fields = '__all__'
+
+
+class UsuarioArticuloSerializer(ModelSerializer):
+
+    class Meta:
+        model = UsuarioArticulo
+        fields = '__all__'
+
+
+class ArticuloSerializer(ModelSerializer):
+
+    class Meta:
+        model = Articulo
+        fields = '__all__'

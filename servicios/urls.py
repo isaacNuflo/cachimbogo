@@ -37,14 +37,13 @@ urlpatterns = [
     path('usuario/<int:id>', views.UsuarioAPIView.as_view()),
     path('usuario/', views.UsuarioAPIListView.as_view()),
 
-    path('usuarioAsignatura/<int:id>', views.UsuarioAsignaturaAPIView.as_view()),
-    path('usuarioAsignatura/', views.UsuarioAsignaturaAPIListView.as_view()),
+    path('usuarioAuth/', views.UsuarioAuthAPIListView.as_view()),
 
-    path('usuarioTema/<int:id>', views.UsuarioTemaAPIView.as_view()),
-    path('usuarioTema/', views.UsuarioTemaAPIListView.as_view()),
+    path('usuarioAsignatura/<int:id>', views.UsuarioAsignaturaAPIListView.as_view()),
 
-    path('usuarioSubtema/<int:id>', views.UsuarioSubtemaAPIView.as_view()),
-    path('usuarioSubtema/', views.UsuarioSubtemaAPIListView.as_view()),
+    path('usuarioTema/<int:id>', views.UsuarioTemaAPIListView.as_view()),
+
+    path('usuarioSubtema/<int:id>', views.UsuarioSubtemaAPIListView.as_view()),
 
   ]
 urlpatterns = format_suffix_patterns(urlpatterns)
