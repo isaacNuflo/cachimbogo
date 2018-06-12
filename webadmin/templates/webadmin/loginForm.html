@@ -48,7 +48,16 @@
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-primary" id="ingresar">Ingresar</button>
                     </div>
+                    <input type="hidden" id="alert" value="{{alert}}" readonly>
                 </form>
+                <script>
+                    $( document ).ready(function() {
+                      if ($("#alert").val()==="1"){
+                        alert("Usuario o contraseña errónea");
+                        $("#alert").val("0");
+                      }
+                    });
+                </script>
             </div>
         </div>
     </div>

@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .models import Asignatura, Tema, Subtema, Pregunta
+from .models import Asignatura, Tema, Subtema, Pregunta, Usuario
 from django.views.decorators.http import require_http_methods
 from .forms import UsuarioForm
+from django.shortcuts import redirect
 
 @require_http_methods(["GET", "POST", "PUT", "DELETE"])
 def questionCreate(request):
@@ -36,6 +37,22 @@ def questionUpdate(request, id):
     return render(request, 'webadmin/questionUpdate.html', context)
 
 def login(request):
-    form = UsuarioForm()
-    return render(request, 'webadmin/loginForm.html', {'form': form})
+    if request.method == "POST":
+        try:
+            item = Usuario.objects.get(usuario=request.POST['usuario'], password=request.POST['password'])
+            return redirect('browser')
+        except Usuario.DoesNotExist:
+            form = UsuarioForm()
+            context = {
+                "form": form,
+                "alert": 1,
+            }
+            return render(request, 'webadmin/loginForm.html', context)
+    else:
+        form = UsuarioForm()
+        context = {
+            "form": form,
+            "alert": 0,
+        }
+        return render(request, 'webadmin/loginForm.html', context)
 
