@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Asignatura, Tema, Subtema, Pregunta
 from django.views.decorators.http import require_http_methods
+from .forms import UsuarioForm
 
 @require_http_methods(["GET", "POST", "PUT", "DELETE"])
 def questionCreate(request):
@@ -35,5 +36,6 @@ def questionUpdate(request, id):
     return render(request, 'webadmin/questionUpdate.html', context)
 
 def login(request):
-    return render(request, 'webadmin/login.html')
+    form = UsuarioForm()
+    return render(request, 'webadmin/loginForm.html', {'form': form})
 

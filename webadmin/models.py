@@ -73,7 +73,7 @@ class TipoPregunta(models.Model):
         db_table = 'tipo_pregunta'
 
 
-class Pregunta(models.Model):
+class  Pregunta(models.Model):
     id_pregunta = models.AutoField(primary_key=True)
     enunciado = models.CharField(max_length=1000)
     clave1 = models.CharField(max_length=200)

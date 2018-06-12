@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'drf_generators',
     'corsheaders',
     'dj_database_url',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

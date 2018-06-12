@@ -339,13 +339,13 @@ class PreguntaRAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, id, tipo, format=None):
+    def get(self, request, id, completado, format=None):
         items = Pregunta.objects.filter(id_subtema=id, id_tipopregunta=tipo)
         lists = []
         response = []
-        if tipo == 1:
+        if completado == 0:
             cantidad = 7
-        elif tipo == 2:
+        elif completado == 1:
             cantidad = 10
         else:
             return Response(response)

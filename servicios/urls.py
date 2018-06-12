@@ -29,7 +29,7 @@ urlpatterns = [
     path('preguntaT/', views.PreguntaTAPIListView.as_view()),
     path('preguntaT/<int:id>', views.PreguntaTAPIListView.as_view()),
 
-    path('preguntaR/<int:id>/<int:tipo>', views.PreguntaRAPIListView.as_view()),
+    path('preguntaR/<int:id>/<int:completado>', views.PreguntaRAPIListView.as_view()),
 
     path('respuesta/<int:id>', views.RespuestaAPIView.as_view()),
     path('respuesta/', views.RespuestaAPIListView.as_view()),
