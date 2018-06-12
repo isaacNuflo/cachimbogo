@@ -340,7 +340,7 @@ class PreguntaRAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, id, completado, format=None):
-        items = Pregunta.objects.filter(id_subtema=id, id_tipopregunta=tipo)
+        items = Pregunta.objects.filter(id_subtema=id)
         lists = []
         response = []
         if completado == 0:
