@@ -1,8 +1,14 @@
 from django import forms
-from .models import Usuario
+from .models import *
 
-class UsuarioForm(forms.ModelForm):
+class UsuarioLoginForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
-        fields = ('usuario', 'password',)
+        fields = ('usuario', 'password', )
+
+class UsuarioRegisterForm(forms.ModelForm):
+
+    class Meta:
+        model = Usuario
+        fields = ('usuario', 'password', 'nombres', 'apellidos', 'correo', )

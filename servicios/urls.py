@@ -4,24 +4,15 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
 
-    path('asignatura/<int:id>', views.AsignaturaAPIView.as_view()),
     path('asignatura/', views.AsignaturaAPIListView.as_view()),
 
-    path('dificultad/<int:id>', views.DificultadAPIView.as_view()),
-    path('dificultad/', views.DificultadAPIListView.as_view()),
-
-    path('tema/<int:id>', views.TemaAPIView.as_view()),
     path('tema/', views.TemaAPIListView.as_view()),
 
     path('tema-asignatura/<int:id>',views.TemaAsignaturaAPIView.as_view()),
 
     path('subtema-tema/<int:id>',views.SubtemaTemaAPIView.as_view()),
 
-    path('subtema/<int:id>', views.SubtemaAPIView.as_view()),
     path('subtema/', views.SubtemaAPIListView.as_view()),
-
-    path('tipopregunta/<int:id>', views.TipoPreguntaAPIView.as_view()),
-    path('tipopregunta/', views.TipoPreguntaAPIListView.as_view()),
 
     path('pregunta/<int:id>', views.PreguntaAPIView.as_view()),
     path('pregunta/', views.PreguntaAPIListView.as_view()),
@@ -44,6 +35,10 @@ urlpatterns = [
     path('usuarioTema/<int:id>', views.UsuarioTemaAPIListView.as_view()),
 
     path('usuarioSubtema/<int:id>', views.UsuarioSubtemaAPIListView.as_view()),
+
+    path('articulo/', views.ArticuloAPIListView.as_view()),
+
+    path('usuarioArticulo/', views.UsuarioArticuloAPI.as_view()),
 
   ]
 urlpatterns = format_suffix_patterns(urlpatterns)

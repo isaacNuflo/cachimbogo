@@ -19,48 +19,49 @@
 </head>
 
 <body>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-heading">
-                <h1 class="text-center">CachimboGo</h1>
-            </div>
-            <hr />
-            <div class="modal-body">
-                <form method="POST" role="form">
-                    {% csrf_token %}
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-heading">
+            <h1 class="text-center">CachimboGo</h1>
+        </div>
+        <hr/>
+        <div class="modal-body">
+            <form method="POST" role="form">
+                {% csrf_token %}
 
-                    <div class="form-group">
-                        <div class="input-group">
+                <div class="form-group">
+                    <div class="input-group">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
-                            {% render_field form.usuario type="text" class="form-control" placeholder="Usuario" id="usuario" %}
-                        </div>
+                        {% render_field form.usuario type="text" class="form-control" placeholder="Usuario" id="usuario" %}
                     </div>
-                    <div class="form-group">
-                        <div class="input-group">
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </span>
-                            {% render_field form.password type="password" class="form-control" placeholder="Contraseña" id="password" %}
-                        </div>
+                        {% render_field form.password type="password" class="form-control" placeholder="Contraseña" id="password" %}
                     </div>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-primary" id="ingresar">Ingresar</button>
-                    </div>
-                    <input type="hidden" id="alert" value="{{alert}}" readonly>
-                </form>
-                <script>
-                    $( document ).ready(function() {
-                      if ($("#alert").val()==="1"){
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-outline-primary" id="ingresar">Ingresar</button>
+                    <a href="register" class="btn btn-default">Registrarse</a>
+                </div>
+                <input type="hidden" id="alert" value="{{ alert }}" readonly>
+            </form>
+            <script>
+                $(document).ready(function () {
+                    if ($("#alert").val() === "1") {
                         alert("Usuario o contraseña errónea");
                         $("#alert").val("0");
-                      }
-                    });
-                </script>
-            </div>
+                    }
+                });
+            </script>
         </div>
     </div>
+</div>
 
 </body>
 

@@ -1,0 +1,184 @@
+Environment variables:
+  - =C:=C:\Users\isaac
+  - =D:=D:\Django\cachimbogo
+  - ALLUSERSPROFILE=C:\ProgramData
+  - APPDATA=C:\Users\isaac\AppData\Roaming
+  - COMPUTERNAME=DESKTOP-7KR3BP7
+  - ComSpec=C:\WINDOWS\system32\cmd.exe
+  - CommonProgramFiles=C:\Program Files\Common Files
+  - CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+  - CommonProgramW6432=C:\Program Files\Common Files
+  - DriverData=C:\Windows\System32\Drivers\DriverData
+  - ERROR_CODE=0
+  - HOMEDRIVE=C:
+  - HOMEPATH=\Users\isaac
+  - JAVA_EXEC="D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin\..\jre\bin\java.exe"
+  - JAVA_HOME=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin\..\jre
+  - LOCALAPPDATA=C:\Users\isaac\AppData\Local
+  - LOGONSERVER=\\DESKTOP-7KR3BP7
+  - NUMBER_OF_PROCESSORS=8
+  - OS=Windows_NT
+  - OneDrive=C:\Users\isaac\OneDrive
+  - PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+  - PROCESSOR_ARCHITECTURE=AMD64
+  - PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+  - PROCESSOR_LEVEL=6
+  - PROCESSOR_REVISION=9e09
+  - PROJECT_HOME=D:\Django\cachimbogo
+  - PROMPT=$P$G
+  - PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+  - PUBLIC=C:\Users\Public
+  - Path=D:\app\isaac\product\11.2.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin;C:\Users\isaac\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\isaac\AppData\Local\Programs\Python\Python36-32\;C:\Users\isaac\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\heroku\bin;D:\heroku\bin
+  - ProgramData=C:\ProgramData
+  - ProgramFiles=C:\Program Files
+  - ProgramFiles(x86)=C:\Program Files (x86)
+  - ProgramW6432=C:\Program Files
+  - SESSIONNAME=Console
+  - SONAR_SCANNER_HOME=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin\..
+  - SystemDrive=C:
+  - SystemRoot=C:\WINDOWS
+  - TEMP=C:\Users\isaac\AppData\Local\Temp
+  - TMP=C:\Users\isaac\AppData\Local\Temp
+  - USERDOMAIN=DESKTOP-7KR3BP7
+  - USERDOMAIN_ROAMINGPROFILE=DESKTOP-7KR3BP7
+  - USERNAME=isaac
+  - USERPROFILE=C:\Users\isaac
+  - asl.log=Destination=file
+  - scriptdir=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin
+  - use_embedded_jre=true
+  - windir=C:\WINDOWS
+System properties:
+  - awt.toolkit=sun.awt.windows.WToolkit
+  - file.encoding=Cp1252
+  - file.encoding.pkg=sun.io
+  - file.separator=\
+  - java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.awt.windows.WPrinterJob
+  - java.class.path=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin\..\lib\sonar-scanner-cli-3.2.0.1227.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\endorsed
+  - java.ext.dirs=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+  - java.home=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre
+  - java.io.tmpdir=C:\Users\isaac\AppData\Local\Temp\
+  - java.library.path=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\app\isaac\product\11.2.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin;C:\Users\isaac\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\isaac\AppData\Local\Programs\Python\Python36-32\;C:\Users\isaac\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\heroku\bin;D:\heroku\bin;.
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_121-b13
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_121
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.121-b13
+  - line.separator=
+
+  - os.arch=amd64
+  - os.name=Windows 10
+  - os.version=10.0
+  - path.separator=;
+  - project.home=D:\Django\cachimbogo
+  - scanner.home=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\bin\..
+  - sun.arch.data.model=64
+  - sun.boot.class.path=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\resources.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\rt.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\sunrsasign.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\jsse.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\jce.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\charsets.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\lib\jfr.jar;D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\classes
+  - sun.boot.library.path=D:\Downloads\sonar-scanner-cli-3.2.0.1227-windows\sonar-scanner-3.2.0.1227-windows\jre\bin
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=amd64
+  - sun.desktop=windows
+  - sun.io.unicode.encoding=UnicodeLittle
+  - sun.java.command=org.sonarsource.scanner.cli.Main -Dsonar.projectKey=cachimbogo -Dsonar.organization=isaacnuflo-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=b862ef08487d442edb1f3ebe0045db86aa124ddb -X
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=Cp1252
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=
+  - sun.stderr.encoding=cp437
+  - sun.stdout.encoding=cp437
+  - user.country=US
+  - user.dir=D:\Django\cachimbogo
+  - user.home=C:\Users\isaac
+  - user.language=en
+  - user.name=isaac
+  - user.script=
+  - user.timezone=America/Bogota
+  - user.variant=
+SonarQube plugins:
+  - Bitbucket Authentication for SonarQube 1.1.0.341 (authbitbucket)
+  - Branch 7.2.0.12953 (branch)
+  - Billing 7.2.0.12953 (billing)
+  - SonarPLSQL 3.2.0.1753 (plsql)
+  - SonarC# 7.1.0.5212 (csharp)
+  - SonarJava 5.4.0.14284 (java)
+  - SonarWeb 2.6.0.1053 (web)
+  - SonarFlex 2.4.0.1222 (flex)
+  - SonarXML 1.5.1.1452 (xml)
+  - SonarTS 1.7.0.2828 (typescript)
+  - SonarVB 5.1.0.442 (vbnet)
+  - SonarSwift 3.3.0.2492 (swift)
+  - GitHub 1.4.2.1027 (github)
+  - SonarCFamily 5.1.0.10083 (cpp)
+  - SonarPython 1.10.0.2131 (python)
+  - GitHub Authentication for SonarQube 1.4.0.651 (authgithub)
+  - Mercurial 1.1.1 (scmmercurial)
+  - SonarGo 1.0.0.1404 (go)
+  - Microsoft Authentication for SonarCloud 1.0.0.155 (authmicrosoft)
+  - SonarTSQL 1.2.0.2539 (tsql)
+  - SonarJS 4.1.0.6085 (javascript)
+  - License 3.4.0.1619 (license)
+  - Git 1.5.0.1152 (scmgit)
+  - HA 7.2.0.12953 (ha)
+  - SonarPHP 2.13.0.3107 (php)
+  - Developer 7.2.0.12953 (developer)
+  - SonarABAP 3.6.0.1269 (abap)
+Global properties:
+  - email.from=noreply@sonarcloud.io
+  - email.prefix=[SonarCloud]
+  - sonar.auth.bitbucket.enabled=true
+  - sonar.auth.github.allowUsersToSignUp=true
+  - sonar.auth.github.enabled=true
+  - sonar.auth.microsoft.enabled=true
+  - sonar.core.id=AWHW8ct9-T_TB3XqouNu
+  - sonar.core.serverBaseURL=https://sonarcloud.io
+  - sonar.core.startTime=2018-06-07T12:32:21+0200
+  - sonar.cpd.cross_project=false
+  - sonar.dbcleaner.daysBeforeDeletingClosedIssues=730
+  - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=480
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1
+  - sonar.java.collectAnalysisErrors=true
+  - sonar.leak.period=30
+  - sonar.lf.aboutText=<div class="boxed-group" style="border: none; border-radius: 3px;">
+  <div class="boxed-group-inner clearfix" style="padding: 30px; border-radius: 3px; border: #e6e6e6 1px solid; background: #f3f3f3;">
+    <div style="overflow: hidden; line-height: 1.5; font-size: 16px;">
+      <p>
+Analyze your open source and private projects on SonarCloud.
+Select your <a href="https://about.sonarcloud.io">plan</a> and start improving. 
+      </p>
+    </div>
+  </div>
+</div>
+  - sonar.lf.enableGravatar=true
+  - sonar.lf.logoUrl=https://about.sonarcloud.io/images/SonarCloud-white-210px.png
+  - sonar.lf.logoWidthPx=105
+  - sonar.organizations.anyoneCanCreate=true
+  - sonar.organizations.createPersonalOrg=true
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.tsql.file.suffixes=.tsql
+Settings for module: cachimbogo
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.login=******
+  - sonar.organization=isaacnuflo-github
+  - sonar.projectBaseDir=D:\Django\cachimbogo
+  - sonar.projectKey=cachimbogo
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.2.0.1227
+  - sonar.sourceEncoding=windows-1252
+  - sonar.sources=.
+  - sonar.verbose=true
+  - sonar.working.directory=D:\Django\cachimbogo\.scannerwork
