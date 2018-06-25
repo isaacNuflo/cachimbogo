@@ -333,26 +333,21 @@ class UsuarioSubtemaAPIListView(APIView):
             try:
                 serializer.save()
                 subtema = Subtema.objects.get(pk=request.data['id_subtema'])
-                subtemas = Subtema.objects.filter(id_tema=subtema.id_tema.id_tema)
                 u_tema = UsuarioTema.objects.get(id_tema=subtema.id_tema.id_tema, id_usuario=id)
-                correctos = 0
-                for id_subtema in subtemas:
-                    u_subtema = UsuarioSubtema.objects.get(id_subtema=id_subtema, completado=1)
-                    if u_subtema:
-                        correctos = correctos + 1
-                porcentaje = (correctos.count() / subtemas.count()) * 100
+                subtemas = Subtema.objects.filter(id_tema=subtema.id_tema.id_tema)
+                id_subtemas = [id_subtema.id_subtema for id_subtema in subtemas]
+                u_subtema = UsuarioSubtema.objects.filter(id_subtema__in=id_subtemas, id_usuario=id, completado=1)
+                porcentaje = (u_subtema.count() / subtemas.count()) * 100
                 u_tema.porcentaje = porcentaje
                 u_tema.save(update_fields=['porcentaje'])
                 if porcentaje == 100.00:
                     tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                     temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
-                    completos = 0
-                    for id_tema in temas:
-                        u_tema = UsuarioTema.objects.get(id_tema=id_tema, porcentaje=100.00)
-                        completos = completos + 1
+                    id_temas = [id_tema.id_tema for id_tema in temas]
+                    u_tema = UsuarioTema.objects.filter(id_tema__in=id_temas, id_usuario=id, porcentaje=100.00)
+                    porcentaje = (u_tema.count() / temas.count()) * 100
                     u_asignatura = UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura,
                                                                  id_usuario=id)
-                    porcentaje = (completos / temas.count()) * 100
                     u_asignatura.porcentaje = porcentaje
                     u_asignatura.save(update_fields=['porcentaje'])
                 return Response(serializer.data, status=201)
@@ -362,15 +357,12 @@ class UsuarioSubtemaAPIListView(APIView):
                 u_tema.save()
                 tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                 try:
-                    u_asignatura = UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura,
-                                                                 id_usuario_id=id)
-                    temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
-                    u_asignatura.porcentaje = (1 / temas.count()) * 100
-                    u_asignatura.save(update_fields=['porcentaje'])
+                    UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura, id_usuario_id=id)
                 except Asignatura.DoesNotExist:
+                    porcentaje = (1 / temas.count()) * 100
                     u_asignatura = UsuarioAsignatura(id_usuario_id=id,
                                                      id_asignatura_id=tema.id_asignatura.id_asignatura,
-                                                     porcentaje=0.00)
+                                                     porcentaje=porcentaje)
                     u_asignatura.save()
                     return Response(serializer.data, status=201)
 
