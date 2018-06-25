@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 from rest_framework.response import Response
 
 @require_http_methods(["GET", "POST", "PUT", "DELETE"])
-def questionCreate(request):
+def question_create(request):
     asignaturas = Asignatura.objects.all()
     context = {
         'asignaturas': asignaturas,
@@ -14,7 +14,7 @@ def questionCreate(request):
     return render(request, 'webadmin/questionCreate.html', context)
 
 
-def questionBrowser(request):
+def question_browser(request):
     asignaturas = Asignatura.objects.all()
     context = {
         'asignaturas': asignaturas,
@@ -22,7 +22,7 @@ def questionBrowser(request):
     return render(request, 'webadmin/questionBrowser.html', context)
 
 
-def questionUpdate(request, id):
+def question_update(request, id):
     pregunta = Pregunta.objects.get(pk=id)
     subtema = Subtema.objects.get(pk=pregunta.id_subtema.id_subtema)
     tema = Tema.objects.get(pk=subtema.id_tema.id_tema)
@@ -43,7 +43,7 @@ def questionUpdate(request, id):
 def login(request):
     if request.method == "POST":
         try:
-            item = Usuario.objects.get(usuario=request.POST['usuario'], password=request.POST['password'])
+            Usuario.objects.get(usuario=request.POST['usuario'], password=request.POST['password'])
             return redirect('browser')
         except Usuario.DoesNotExist:
             form = UsuarioLoginForm()

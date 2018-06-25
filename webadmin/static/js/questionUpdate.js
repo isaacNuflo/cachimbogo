@@ -14,18 +14,19 @@ $(document).ready(function () {
     var selectDificultad = $("#selectDificultad").attr("id");
 
     $(".form-control").change(function () {
+        var url = "";
         var id = $(this).attr("id");
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -67,10 +68,9 @@ $(document).ready(function () {
                     'Content-Type': 'application/json'
                 },
                 success: function () {
-                    alert("Saved! It worked.");
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("some error " + String(errorThrown) + String(textStatus) + String(XMLHttpRequest.responseText));
+                error: function () {
+                    alert("Error");
                 }
             });
     });
@@ -119,7 +119,7 @@ $(document).ready(function () {
 });
 
 function crearObj(subtema,pregunta, alternativa1, alternativa2, alternativa3,
-    alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta) {
+                  alternativa4, alternativa5, informacion, dificultad, correcta) {
 
     this.id_pregunta = $('#idPregunta').val();
     this.enunciado = pregunta;

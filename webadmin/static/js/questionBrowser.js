@@ -6,18 +6,19 @@ $(document).ready(function () {
     var selectSubTemas = $("#selectSubTemas").attr("id");
 
     $(".form-control").change(function () {
+        var url = "";
         var id = $(this).attr("id");
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
 
-            var url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
 
-            var url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
