@@ -1,7 +1,0 @@
-organization=isaacnuflo-github
-projectKey=cachimbogo
-serverUrl=https://sonarcloud.io
-serverVersion=7.3.0.13459
-dashboardUrl=https://sonarcloud.io/dashboard?id=cachimbogo
-ceTaskId=AWQ0toSFbeCyhWW1TsRm
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWQ0toSFbeCyhWW1TsRm
