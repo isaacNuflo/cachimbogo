@@ -42,7 +42,7 @@ $(document).ready(function () {
         informacion = $("#info").val();
 
         var obj = new crearObj(subtema, pregunta, alternativa1, alternativa2, alternativa3,
-            alternativa3, alternativa4, alternativa5, informacion, dificultad, correcta);
+                               alternativa4, alternativa5, informacion, dificultad, correcta);
 
         enviarData(obj);
         $("#Alternativa1").val("");
