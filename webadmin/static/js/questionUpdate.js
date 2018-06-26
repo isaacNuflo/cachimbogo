@@ -79,7 +79,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "PUT",
-            url: "http://cachimbogo.herokuapp.com/servicios/pregunta/" +$('#idPregunta').val(),
+            url: "https://cachimbogo.herokuapp.com/servicios/pregunta/" +$('#idPregunta').val(),
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {
