@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'CGO.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u736411459_bd',
+        'NAME': 'u826817051_bd',
         'USER': 'u736411459_alexk',
-        'PASSWORD': 'ruEvGTzVY1F7',
-        'HOST': 'sql141.main-hosting.eu',
+        'PASSWORD': 'meCmgfPH0I4N',
+        'HOST': 'sql154.main-hosting.eu',
         'PORT': '3306',
     }
 }
