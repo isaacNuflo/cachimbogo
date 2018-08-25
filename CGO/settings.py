@@ -159,7 +159,7 @@ REST_FRAMEWORK = {
 
 # Update database configuration with $DATABASE_URL.
   
-DATABASES['default'] = dj_database_url.config(default='mysql://u736411459_alexk:ruEvGTzVY1F7@sql141.main-hosting.eu:3306/u736411459_bd')
+DATABASES['default'] = dj_database_url.config(default='mysql://u826817051_alexz:meCmgfPH0I4N@sql154.main-hosting.eu:3306/u826817051_bd')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATIC_URL = '/static/'
