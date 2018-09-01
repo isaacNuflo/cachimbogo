@@ -111,7 +111,7 @@ class RespuestaPreguntaSerializer(ModelSerializer):
 class UsuarioSerializer(ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ('usuario', 'nombres', 'apellidos', 'correo', 'monedas')
+        fields = ('id_usuario', 'usuario', 'nombres', 'apellidos', 'correo', 'monedas')
 
 
 class UsuarioAsignaturaSerializer(ModelSerializer):
