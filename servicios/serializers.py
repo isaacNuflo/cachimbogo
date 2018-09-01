@@ -97,6 +97,18 @@ class RespuestaSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class RespuestaPreguntaSerializer(ModelSerializer):
+    pregunta = SerializerMethodField()
+
+    def get_pregunta(self,respuesta):
+        pregunta = PreguntaSerializer(respuesta.id_pregunta, many=False, read_only=True)
+        return pregunta.data
+
+    class Meta:
+        model = Respuesta
+        fields = '__all__'
+
+
 class UsuarioSerializer(ModelSerializer):
 
     class Meta:
@@ -112,6 +124,11 @@ class UsuarioAuthSerializer(ModelSerializer):
 
 
 class UsuarioAsignaturaSerializer(ModelSerializer):
+    asignatura = SerializerMethodField()
+
+    def get_asignatura(self,usuario_asignatura):
+        asignatura = AsignaturaSerializer(usuario_asignatura.id_asignatura, many=False, read_only=True)
+        return asignatura.data
 
     class Meta:
         model = UsuarioAsignatura

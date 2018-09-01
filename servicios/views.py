@@ -191,6 +191,17 @@ class RespuestaAPIView(APIView):
         return Response(status=204)
 
 
+class RespuestaPreguntaListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def post(self, request, format=None):
+        items = Respuesta.objects.filter(id_pregunta__id_subtema=request.data['id_subtema'],
+                                                     id_usuario=request.data['id_usuario'])
+        serializer = RespuestaPreguntaSerializer(items, many=True)
+        return Response(serializer.data)
+
+
 class RespuestaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
@@ -201,16 +212,24 @@ class RespuestaAPIListView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = RespuestaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        else:
-            respuesta = Respuesta.objects.get(id_usuario=request.data['id_usuario'],
-                                              id_pregunta=request.data['id_pregunta'])
-            respuesta.acertada = request.data['acertada']
-            respuesta.save(update_fields=['acertada'])
-            return Response(status=201)
+        for requests in request.data:
+            try:
+                Respuesta.objects.get(id_usuario=requests['id_usuario'], id_pregunta=requests['id_pregunta'])
+                print(requests['id_pregunta'])
+                respuesta = Respuesta.objects.get(id_usuario__pk=requests['id_usuario'],
+                                                  id_pregunta__pk=requests['id_pregunta'])
+                print(respuesta.id_usuario)
+                respuesta.acertada = requests['acertada']
+                respuesta.save(update_fields=['acertada'])
+            except Respuesta.DoesNotExist:
+                usuario = Usuario.objects.get(id_usuario=requests['id_usuario'])
+                pregunta = Pregunta.objects.get(id_pregunta=requests['id_pregunta'])
+                print(pregunta.id_pregunta)
+                respuesta = Respuesta(id_usuario=usuario, id_pregunta=pregunta,
+                                      acertada=requests['acertada'])
+                print(respuesta)
+                respuesta.save(force_insert=True)
+        return Response(status=201)
 
 
 class UsuarioAPIView(APIView):
@@ -267,9 +286,9 @@ class UsuarioAsignaturaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, id, format=None):
-        items = UsuarioAsignatura.objects.filter(id_usuario=id)
-        serializer = UsuarioAsignaturaSerializer(items, many=True)
+    def post(self, request, format=None):
+        items = UsuarioAsignatura.objects.filter(id_usuario_id=request.data['id_usuario'])
+        serializer = UsuarioAsignaturaSerializer(items)
         return Response(serializer.data)
 
 
@@ -306,6 +325,16 @@ class UsuarioArticuloAPI(APIView):
         usuario.monedas = request.data['monedas']
         usuario.save(update_fields=['monedas'])
         return Response(status=201)
+
+
+class UsuarioArticuloListAPI(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def post(self, request, format=None):
+        items = UsuarioArticulo.objects.filter(id_usuario_id=request.data['id_usuario'])
+        serializer = UsuarioArticuloSerializer(items, many=True)
+        return Response(serializer.data)
 
 
 class ArticuloAPIListView(APIView):

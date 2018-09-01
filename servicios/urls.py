@@ -30,7 +30,7 @@ urlpatterns = [
 
     path('usuarioAuth/', views.UsuarioAuthAPIListView.as_view()),
 
-    path('usuarioAsignatura/<int:id>', views.UsuarioAsignaturaAPIListView.as_view()),
+    path('usuarioAsignatura/', views.UsuarioAsignaturaAPIListView.as_view()),
 
     path('usuarioTema/<int:id>', views.UsuarioTemaAPIListView.as_view()),
 
@@ -39,6 +39,12 @@ urlpatterns = [
     path('articulo/', views.ArticuloAPIListView.as_view()),
 
     path('usuarioArticulo/', views.UsuarioArticuloAPI.as_view()),
+
+    path('usuarioMonedas/', views.UsuarioMonedasAPI.as_view()),
+
+    path('respuestaPregunta/', views.RespuestaPreguntaListView.as_view()),
+
+    path('usuarioArticulos/', views.UsuarioArticuloListAPI.as_view()),
 
   ]
 urlpatterns = format_suffix_patterns(urlpatterns)
