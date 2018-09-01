@@ -26,6 +26,12 @@ class SubtemaTemaSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class TemaOSerializer(ModelSerializer):
+    class Meta:
+        model = Tema
+        fields = '__all__'
+
+
 class TemaSerializer(ModelSerializer):
     asignatura = SerializerMethodField()
 
@@ -130,7 +136,7 @@ class UsuarioTemaSerializer(ModelSerializer):
     tema = SerializerMethodField()
 
     def get_tema(self, usuario_tema):
-        tema = TemaSerializer(usuario_tema.id_tema, many=False, read_only=True)
+        tema = TemaOSerializer(usuario_tema.id_tema, many=False, read_only=True)
         return tema.data
 
     class Meta:
