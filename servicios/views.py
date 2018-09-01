@@ -274,8 +274,9 @@ class UsuarioAuthAPIListView(APIView):
 
     def post(self, request, format=None):
         try:
-            Usuario.objects.get(usuario=request.data['usuario'], password=request.data['password'])
-            return Response({"auth": True})
+            items = Usuario.objects.get(usuario=request.data['usuario'], password=request.data['password'])
+            serializer = UsuarioSerializer(items)
+            return Response(serializer.data)
         except Usuario.DoesNotExist:
             return Response({"auth": False})
 

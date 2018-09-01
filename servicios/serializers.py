@@ -111,13 +111,7 @@ class RespuestaPreguntaSerializer(ModelSerializer):
 class UsuarioSerializer(ModelSerializer):
     class Meta:
         model = Usuario
-        fields = '__all__'
-
-
-class UsuarioAuthSerializer(ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = ('usuario', 'password')
+        fields = ('usuario', 'nombres', 'apellidos', 'correo', 'monedas')
 
 
 class UsuarioAsignaturaSerializer(ModelSerializer):
