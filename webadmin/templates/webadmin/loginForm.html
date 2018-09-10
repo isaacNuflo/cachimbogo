@@ -27,7 +27,7 @@
         <hr/>
         <div class="modal-body">
             <form method="POST" role="form">
-                {% csrf_token %}
+                {% csrf_token %}    <!-- Token de autorizacion -->
 
                 <div class="form-group">
                     <div class="input-group">
@@ -49,9 +49,10 @@
                     <button type="submit" class="btn btn-outline-primary" id="ingresar">Ingresar</button>
                     <a href="register" class="btn btn-default">Registrarse</a>
                 </div>
-                <input type="hidden" id="alert" value="{{ alert }}" readonly>
+                <input type="hidden" id="alert" value="{{ alert }}" readonly>   <!-- Respuesta del servidor -->
             </form>
             <script>
+                //Alerta
                 $(document).ready(function () {
                     if ($("#alert").val() === "1") {
                         alert("Usuario o contraseña errónea");

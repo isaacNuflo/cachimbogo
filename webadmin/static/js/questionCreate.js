@@ -57,7 +57,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "https://cachimbogo.herokuapp.com/servicios/preguntaT/",
+            url: "https://cachimbogo.herokuapp.com/servicios/preguntaT/",   //Servicio que guarda la pregunta
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {

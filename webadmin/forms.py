@@ -1,6 +1,8 @@
 from django import forms
 from .models import *
 
+#Creacion de los forms por Modelo
+
 class UsuarioLoginForm(forms.ModelForm):
 
     class Meta:

@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 @require_http_methods(["GET", "POST", "PUT", "DELETE"])
 def question_create(request):
-    asignaturas = Asignatura.objects.all()
+    asignaturas = Asignatura.objects.all()  #Todas las Asignaturas
     context = {
         'asignaturas': asignaturas,
     }
@@ -15,19 +15,19 @@ def question_create(request):
 
 
 def question_browser(request):
-    asignaturas = Asignatura.objects.all()
+    asignaturas = Asignatura.objects.all()  #Todas las Asignaturas
     context = {
         'asignaturas': asignaturas,
     }
     return render(request, 'webadmin/questionBrowser.html', context)
 
-
+#Parametro el id de la pregunta
 def question_update(request, id):
     pregunta = Pregunta.objects.get(pk=id)
     subtema = Subtema.objects.get(pk=pregunta.id_subtema.id_subtema)
     tema = Tema.objects.get(pk=subtema.id_tema.id_tema)
-    subtemas = Subtema.objects.filter(id_tema__id_tema=tema.id_tema)
-    temas = Tema.objects.filter(id_asignatura__id_asignatura=tema.id_asignatura.id_asignatura)
+    subtemas = Subtema.objects.filter(id_tema__id_tema=tema.id_tema)    #Todos los subtemas relacionados a un tema
+    temas = Tema.objects.filter(id_asignatura__id_asignatura=tema.id_asignatura.id_asignatura) #Todos los temas relacionadas a una asignatura
     asignaturas = Asignatura.objects.all()
     context = {
         'pregunta': pregunta,
@@ -43,13 +43,13 @@ def question_update(request, id):
 def login(request):
     if request.method == "POST":
         try:
-            Usuario.objects.get(usuario=request.POST['usuario'], password=request.POST['password'])
+            Usuario.objects.get(usuario=request.POST['usuario'], password=request.POST['password']) #Existencia del usuario
             return redirect('browser')
         except Usuario.DoesNotExist:
             form = UsuarioLoginForm()
             context = {
                 "form": form,
-                "alert": 1,
+                "alert": 1, #Lanza el mensaje de fallo de ingreso
             }
             return render(request, 'webadmin/loginForm.html', context)
     else:
@@ -64,9 +64,7 @@ def login(request):
 def register(request):
     if request.method == "POST":
         try:
-            print(request.POST['usuario'])
-            item = Usuario.objects.get(usuario=request.POST['usuario'])
-            print(item.usuario)
+            Usuario.objects.get(usuario=request.POST['usuario'])
             form = UsuarioRegisterForm()
             context = {
                 "form": form,
@@ -77,7 +75,7 @@ def register(request):
             usuario = Usuario(usuario=request.POST['usuario'], password=request.POST['password'],
                               nombres=request.POST['nombres'], apellidos=request.POST['apellidos'],
                               correo=request.POST['correo'], monedas=0)
-            usuario.save()
+            usuario.save()  #Guarda en la Base de Datos
             return redirect('login')
 
     else:

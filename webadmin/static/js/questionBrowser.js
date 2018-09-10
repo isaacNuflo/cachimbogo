@@ -26,7 +26,7 @@ $(document).ready(function () {
         }    
     });
     $("#buscar").click(function () {
-        var url = "https://cachimbogo.herokuapp.com/servicios/preguntaT/" + subtema;
+        var url = "https://cachimbogo.herokuapp.com/servicios/preguntaT/" + subtema; // Carga las preguntas
         cargarTabla(url);
     });
 
