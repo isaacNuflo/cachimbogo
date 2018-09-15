@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5029dc07-a665-465a-bbd9-27fcab0c5d87" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicios/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicios/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicios/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/static/js/questionCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/static/js/questionCreate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/loginForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/loginForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webadmin/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +24,11 @@
     <session id="-697563802">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,7 +36,7 @@
           <entry key="html" value="5" />
           <entry key="js" value="2" />
           <entry key="lock" value="3" />
-          <entry key="py" value="16" />
+          <entry key="py" value="26" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -49,36 +45,73 @@
           <entry key="HTML" value="5" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="265" />
           <entry key="js" value="63" />
-          <entry key="py" value="2634" />
+          <entry key="py" value="3030" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="265" />
           <entry key="JavaScript" value="63" />
-          <entry key="Python" value="2634" />
+          <entry key="Python" value="3030" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servicios/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="391" column="67" selection-start-line="391" selection-start-column="67" selection-end-line="391" selection-end-column="67" />
+            <state relative-caret-position="317">
+              <caret line="355" lean-forward="true" selection-start-line="355" selection-end-line="355" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
-                <marker date="1536545047410" expanded="true" signature="6402:6815" ph="..." />
-                <marker date="1536545047410" expanded="true" signature="11473:11788" ph="..." />
+                <marker date="1536991639291" expanded="true" signature="6402:6815" ph="..." />
+                <marker date="1536991639291" expanded="true" signature="11556:11871" ph="..." />
+                <marker date="1536991639291" expanded="true" signature="12204:12559" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servicios/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="108" column="15" lean-forward="true" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servicios/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="38" column="71" lean-forward="true" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servicios/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="140" column="30" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#77#0" expanded="true" />
+                <marker date="1536991316649" expanded="true" signature="614:681" ph="..." />
+                <marker date="1536991316649" expanded="true" signature="3321:3433" ph="..." />
+                <marker date="1536991316649" expanded="true" signature="3633:3763" ph="..." />
               </folding>
             </state>
           </provider>
@@ -153,14 +186,14 @@
         <option value="$PROJECT_DIR$/webadmin/models.py" />
         <option value="$PROJECT_DIR$/webadmin/urls.py" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionUpdate.js" />
-        <option value="$PROJECT_DIR$/servicios/urls.py" />
-        <option value="$PROJECT_DIR$/servicios/serializers.py" />
         <option value="$PROJECT_DIR$/webadmin/views.py" />
         <option value="$PROJECT_DIR$/webadmin/forms.py" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/loginForm.html" />
         <option value="$PROJECT_DIR$/webadmin/templates/webadmin/questionUpdate.html" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionBrowser.js" />
         <option value="$PROJECT_DIR$/webadmin/static/js/questionCreate.js" />
+        <option value="$PROJECT_DIR$/servicios/serializers.py" />
+        <option value="$PROJECT_DIR$/servicios/urls.py" />
         <option value="$PROJECT_DIR$/servicios/views.py" />
       </list>
     </option>
@@ -378,7 +411,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -392,7 +425,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.33049646" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49739584" visible="true" weight="0.2496454" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49739584" weight="0.2496454" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5026042" side_tool="true" weight="0.28827587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -401,6 +434,30 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24161074" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.32965517" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.33049646" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49739584" visible="true" weight="0.2496454" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5026042" side_tool="true" weight="0.28827587" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -505,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CGO/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/base.html" />
     <entry file="file://$PROJECT_DIR$/webadmin/templates/webadmin/questionBrowserForm.html" />
     <entry file="file://$PROJECT_DIR$/servicios/__init__.py">
@@ -544,9 +594,6 @@
         <state relative-caret-position="-1938" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.metrics" />
     <entry file="file://$PROJECT_DIR$/servicios/.scannerwork/report-task.txt" />
     <entry file="file://$PROJECT_DIR$/webadmin/static/js/login.js" />
@@ -564,35 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="113" column="73" selection-start-line="113" selection-start-column="73" selection-end-line="113" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-            <marker date="1536542378817" expanded="true" signature="614:681" ph="..." />
-            <marker date="1536542378817" expanded="true" signature="3321:3433" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="65" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webadmin/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
@@ -604,9 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,14 +720,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CGO/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="108" column="15" lean-forward="true" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="140" column="30" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+            <marker date="1536991316649" expanded="true" signature="614:681" ph="..." />
+            <marker date="1536991316649" expanded="true" signature="3321:3433" ph="..." />
+            <marker date="1536991316649" expanded="true" signature="3633:3763" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicios/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="38" column="71" lean-forward="true" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/servicios/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="391" column="67" selection-start-line="391" selection-start-column="67" selection-end-line="391" selection-end-column="67" />
+        <state relative-caret-position="317">
+          <caret line="355" lean-forward="true" selection-start-line="355" selection-end-line="355" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1536545047410" expanded="true" signature="6402:6815" ph="..." />
-            <marker date="1536545047410" expanded="true" signature="11473:11788" ph="..." />
+            <marker date="1536991639291" expanded="true" signature="6402:6815" ph="..." />
+            <marker date="1536991639291" expanded="true" signature="11556:11871" ph="..." />
+            <marker date="1536991639291" expanded="true" signature="12204:12559" ph="..." />
           </folding>
         </state>
       </provider>

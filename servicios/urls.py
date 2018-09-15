@@ -32,9 +32,11 @@ urlpatterns = [
 
     path('usuarioAsignatura/', views.UsuarioAsignaturaAPIListView.as_view()),
 
-    path('usuarioTema/<int:id>', views.UsuarioTemaAPIListView.as_view()),
+    path('usuarioTema/', views.UsuarioTemaAPIListView.as_view()),
 
-    path('usuarioSubtema/<int:id>', views.UsuarioSubtemaAPIListView.as_view()),
+    path('completado/', views.UsuarioSubtemaCascadaAPIListView.as_view()),
+
+    path('usuarioSubtema/', views.UsuarioSubtemaAPIListView.as_view()),
 
     path('articulo/', views.ArticuloAPIListView.as_view()),
 

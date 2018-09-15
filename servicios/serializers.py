@@ -139,10 +139,20 @@ class UsuarioTemaSerializer(ModelSerializer):
 
 
 class UsuarioSubtemaSerializer(ModelSerializer):
+    subtema = SerializerMethodField()
+
+    def get_subtema(self, usuario_subtema):
+        subtema = SubtemaTemaSerializer(usuario_subtema.id_subtema, many=False, read_only=True)
+        return subtema.data
+
     class Meta:
         model = UsuarioSubtema
         fields = '__all__'
 
+class UsuarioSubtemaCascadaSerializer(ModelSerializer):
+    class Meta:
+        model = UsuarioSubtema
+        fields = '__all__'
 
 class UsuarioArticuloSerializer(ModelSerializer):
     class Meta:

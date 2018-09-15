@@ -284,8 +284,8 @@ class UsuarioAsignaturaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def post(self, request, format=None):
-        items = UsuarioAsignatura.objects.filter(id_usuario_id=request.data['id_usuario'])
-        serializer = UsuarioAsignaturaSerializer(items)
+        items = UsuarioAsignatura.objects.filter(id_usuario=request.data['id_usuario'])
+        serializer = UsuarioAsignaturaSerializer(items, many=True)
         return Response(serializer.data)
 
 
@@ -293,8 +293,8 @@ class UsuarioTemaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, id, format=None):
-        items = UsuarioTema.objects.filter(id_usuario=id)
+    def post(self, request, format=None):
+        items = UsuarioTema.objects.filter(id_usuario=request.data['id_usuario'], id_tema__id_asignatura=request.data['id_asignatura'])
         serializer = UsuarioTemaSerializer(items, many=True)
         return Response(serializer.data)
 
@@ -348,21 +348,26 @@ class UsuarioSubtemaAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, id, format=None):
-        items = UsuarioSubtema.objects.filter(id_usuario=id)
+    def post(self, request, format=None):
+        items = UsuarioSubtema.objects.filter(id_usuario=request.data['id_usuario'], id_subtema__id_tema=request.data['id_tema'])
         serializer = UsuarioSubtemaSerializer(items, many=True)
         return Response(serializer.data)
 
-    def post(self, request, id, format=None):
-        serializer = UsuarioSubtemaSerializer(data=request.data)
+
+class UsuarioSubtemaCascadaAPIListView(APIView):
+    renderer_classes = (JSONRenderer,)
+    parser_classes = (JSONParser,)
+
+    def post(self, request, format=None):
+        serializer = UsuarioSubtemaCascadaSerializer(data=request.data)
         if serializer.is_valid():
             try:
                 serializer.save()
                 subtema = Subtema.objects.get(pk=request.data['id_subtema'])
-                u_tema = UsuarioTema.objects.get(id_tema=subtema.id_tema.id_tema, id_usuario=id)
+                u_tema = UsuarioTema.objects.get(id_tema=subtema.id_tema.id_tema, id_usuario=request.data['id_usuario'])
                 subtemas = Subtema.objects.filter(id_tema=subtema.id_tema.id_tema)
                 id_subtemas = [id_subtema.id_subtema for id_subtema in subtemas]
-                u_subtema = UsuarioSubtema.objects.filter(id_subtema__in=id_subtemas, id_usuario=id, completado=1)
+                u_subtema = UsuarioSubtema.objects.filter(id_subtema__in=id_subtemas, id_usuario=request.data['id_usuario'], completado=1)
                 porcentaje = (u_subtema.count() / subtemas.count()) * 100   #Porcentaje de subtema completo
                 u_tema.porcentaje = porcentaje
                 u_tema.save(update_fields=['porcentaje'])   #Actualizacion del porcentaje
@@ -370,23 +375,23 @@ class UsuarioSubtemaAPIListView(APIView):
                     tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                     temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
                     id_temas = [id_tema.id_tema for id_tema in temas]
-                    u_tema = UsuarioTema.objects.filter(id_tema__in=id_temas, id_usuario=id, porcentaje=100.00)
+                    u_tema = UsuarioTema.objects.filter(id_tema__in=id_temas, id_usuario=request.data['id_usuario'], porcentaje=100.00)
                     porcentaje = (u_tema.count() / temas.count()) * 100 #Porcentaje de tema completo
                     u_asignatura = UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura,
-                                                                 id_usuario=id)
+                                                                 id_usuario=request.data['id_usuario'])
                     u_asignatura.porcentaje = porcentaje
                     u_asignatura.save(update_fields=['porcentaje']) #Actualizacion del porcentaje
                 return Response(serializer.data, status=201)
             except UsuarioTema.DoesNotExist: #Primera vez que desarrolla un subtema
                 porcentaje = (1 / subtemas.count()) * 100   #Un subtema completo
-                u_tema = UsuarioTema(id_usuario_id=id, id_temas_id=subtema.id_tema.id_tema, porcentaje=porcentaje)
+                u_tema = UsuarioTema(id_usuario_id=request.data['id_usuario'], id_temas_id=subtema.id_tema.id_tema, porcentaje=porcentaje)
                 u_tema.save()   #Inserta un usuario-tema
                 tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                 try:
-                    UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura, id_usuario_id=id)
+                    UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura, id_usuario_id=request.data['id_usuario'])
                 except Asignatura.DoesNotExist: #Si usuario asignatura no existe
                     porcentaje = (1 / temas.count()) * 100  #Un tema completo
-                    u_asignatura = UsuarioAsignatura(id_usuario_id=id,
+                    u_asignatura = UsuarioAsignatura(id_usuario_id=request.data['id_usuario'],
                                                      id_asignatura_id=tema.id_asignatura.id_asignatura,
                                                      porcentaje=porcentaje)
                     u_asignatura.save() #Inserta usuario-asignatura
