@@ -12,7 +12,7 @@ class AsignaturaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = Asignatura.objects.exclude(pk=19)   #Excluye el curso que estan en la tienda
+        items = Asignatura.objects.exclude(id_asignatura__in=[19,8])   #Excluye el curso que estan en la tienda
         serializer = AsignaturaSerializer(items, many=True)
         return Response(serializer.data)
 
@@ -257,11 +257,19 @@ class UsuarioAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def post(self, request, format=None):
-        serializer = UsuarioSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
+        if request.data['usuario'] != "" and request.data['password'] != "":
+            serializer = UsuarioSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                items = Asignatura.objects.exclude(id_asignatura__in=[19, 8])
+                id_usuario = Usuario.objects.get(usuario=request.data['usuario'])
+                for item in items:
+                    asignatura = UsuarioAsignatura(id_usuario=id_usuario, id_asignatura=item, porcentaje=0.0)
+                    asignatura.save()
+                return Response(serializer.data, status=201)
+            return Response(serializer.errors, status=400)
+        else:
+            return Response(status=400)
 
 
 class UsuarioAuthAPIListView(APIView):
@@ -315,8 +323,10 @@ class UsuarioArticuloAPI(APIView):
     parser_classes = (JSONParser,)
 
     def post(self, request, format=None):
-        usuario_articulo = UsuarioArticulo(id_usuario_id=request.data['id_usuario'],
-                                           id_articulo_id=request.data['id_articulo'])
+        id_usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
+        id_articulo = Articulo.objects.get(id_articulo=request.data['id_articulo'])
+        usuario_articulo = UsuarioArticulo(id_usuario_id=id_usuario,
+                                           id_articulo_id=id_articulo)
         usuario_articulo.save()
         usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
         usuario.monedas = request.data['monedas']
