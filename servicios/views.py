@@ -258,14 +258,15 @@ class UsuarioAPIListView(APIView):
 
     def post(self, request, format=None):
         if request.data['usuario'] != "" and request.data['password'] != "":
-            serializer = UsuarioSerializer(data=request.data)
+            serializer = UsuarioRegisterSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
                 items = Asignatura.objects.exclude(id_asignatura__in=[19, 8])
                 id_usuario = Usuario.objects.get(usuario=request.data['usuario'])
+                asignaturas = []
                 for item in items:
-                    asignatura = UsuarioAsignatura(id_usuario=id_usuario, id_asignatura=item, porcentaje=0.0)
-                    asignatura.save()
+                    asignaturas.append(UsuarioAsignatura(id_usuario=id_usuario, id_asignatura=item, porcentaje=0.0))
+                UsuarioAsignatura.objects.bulk_create(asignaturas)
                 return Response(serializer.data, status=201)
             return Response(serializer.errors, status=400)
         else:
@@ -325,9 +326,12 @@ class UsuarioArticuloAPI(APIView):
     def post(self, request, format=None):
         id_usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
         id_articulo = Articulo.objects.get(id_articulo=request.data['id_articulo'])
+        id_asignatura = Asignatura.objects.get(id_asignatura=request.data['id_articulo'])
         usuario_articulo = UsuarioArticulo(id_usuario_id=id_usuario,
                                            id_articulo_id=id_articulo)
         usuario_articulo.save()
+        usuario_asignatura = UsuarioAsignatura(id_usuario=id_usuario, id_asignatura=id_asignatura, porcentaje=0.0)
+        usuario_asignatura.save()
         usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
         usuario.monedas = request.data['monedas']
         usuario.save(update_fields=['monedas'])

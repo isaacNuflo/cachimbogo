@@ -114,6 +114,12 @@ class UsuarioSerializer(ModelSerializer):
         fields = ('id_usuario', 'usuario', 'nombres', 'apellidos', 'correo', 'monedas')
 
 
+class UsuarioRegisterSerializer(ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ('usuario', 'password', 'nombres', 'apellidos', 'correo', 'monedas')
+
+
 class UsuarioAsignaturaSerializer(ModelSerializer):
     asignatura = SerializerMethodField()
 
