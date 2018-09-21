@@ -14,7 +14,7 @@ class AsignaturaAPIListView(APIView):
     def get(self, request, format=None):
         items = Asignatura.objects.exclude(id_asignatura__in=[19,8])   #Excluye el curso que estan en la tienda
         serializer = AsignaturaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class SubtemaTemaAPIView(APIView):
@@ -50,7 +50,7 @@ class TemaAPIListView(APIView):
     def get(self, request, format=None):
         items = Tema.objects.all()  #Todos los temas
         serializer = TemaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class SubtemaAPIListView(APIView):
@@ -60,7 +60,7 @@ class SubtemaAPIListView(APIView):
     def get(self, request, format=None):
         items = Subtema.objects.all()   #Todos los subtemas
         serializer = SubtemaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class PreguntaAPIView(APIView):
@@ -102,7 +102,7 @@ class PreguntaTAPIListView(APIView):
     def get(self, request, id, format=None):
         items = Pregunta.objects.filter(id_subtema__id_subtema=id)  #Pregutas de un subtema
         serializer = PreguntaTSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
     def post(self, request, format=None):
         serializer = PreguntaTSerializer(data=request.data)
@@ -134,7 +134,7 @@ class PreguntaRAPIListView(APIView):
                 response.append(self.get_answer(rand))
                 i = i + 1
 
-        return Response(response)
+        return Response(response, status=201)
 
     def get_answer(self, rand):
         pregunta = Pregunta.objects.get(pk=rand)
@@ -149,7 +149,7 @@ class PreguntaAPIListView(APIView):
     def get(self, request, format=None):
         items = Pregunta.objects.all()
         serializer = PreguntaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
     def post(self, request, format=None):
         serializer = PreguntaSerializer(data=request.data)
@@ -199,7 +199,7 @@ class RespuestaPreguntaListView(APIView):
         items = Respuesta.objects.filter(id_pregunta__id_subtema=request.data['id_subtema'],
                                                      id_usuario=request.data['id_usuario'])
         serializer = RespuestaPreguntaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class RespuestaAPIListView(APIView):
@@ -295,7 +295,7 @@ class UsuarioAsignaturaAPIListView(APIView):
     def post(self, request, format=None):
         items = UsuarioAsignatura.objects.filter(id_usuario=request.data['id_usuario'])
         serializer = UsuarioAsignaturaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class UsuarioTemaAPIListView(APIView):
@@ -305,7 +305,7 @@ class UsuarioTemaAPIListView(APIView):
     def post(self, request, format=None):
         items = UsuarioTema.objects.filter(id_usuario=request.data['id_usuario'], id_tema__id_asignatura=request.data['id_asignatura'])
         serializer = UsuarioTemaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class UsuarioMonedasAPI(APIView):
@@ -345,17 +345,22 @@ class UsuarioArticuloListAPI(APIView):
     def post(self, request, format=None):
         items = UsuarioArticulo.objects.filter(id_usuario_id=request.data['id_usuario'])
         serializer = UsuarioArticuloSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class ArticuloAPIListView(APIView):
     renderer_classes = (JSONRenderer,)
     parser_classes = (JSONParser,)
 
-    def get(self, request, format=None):
-        items = Articulo.objects.all()
-        serializer = ArticuloSerializer(items, many=True)
-        return Response(serializer.data)
+    def post(self, request, format=None):
+        usuario_articulo = UsuarioArticulo.objects.filter(id_usuario=request.data['id_usuario'])
+        articulos_comprados = [articulo.id_articulo.id_articulo for articulo in usuario_articulo]
+        items = Articulo.objects.exclude(id_articulo__in=articulos_comprados)
+        if items:
+            serializer = ArticuloSerializer(items, many=True)
+            return Response(serializer.data, status=201)
+        else:
+            return Response([], status=201)
 
 
 class UsuarioSubtemaAPIListView(APIView):
@@ -365,7 +370,7 @@ class UsuarioSubtemaAPIListView(APIView):
     def post(self, request, format=None):
         items = UsuarioSubtema.objects.filter(id_usuario=request.data['id_usuario'], id_subtema__id_tema=request.data['id_tema'])
         serializer = UsuarioSubtemaSerializer(items, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=201)
 
 
 class UsuarioSubtemaCascadaAPIListView(APIView):
