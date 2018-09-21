@@ -327,11 +327,11 @@ class UsuarioArticuloAPI(APIView):
         id_usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
         id_articulo = Articulo.objects.get(id_articulo=request.data['id_articulo'])
         id_asignatura = Asignatura.objects.get(id_asignatura=request.data['id_articulo'])
-        usuario_articulo = UsuarioArticulo(id_usuario_id=id_usuario,
-                                           id_articulo_id=id_articulo)
-        usuario_articulo.save()
+        usuario_articulo = UsuarioArticulo(id_usuario=id_usuario,
+                                           id_articulo=id_articulo)
+        usuario_articulo.save(force_insert=True)
         usuario_asignatura = UsuarioAsignatura(id_usuario=id_usuario, id_asignatura=id_asignatura, porcentaje=0.0)
-        usuario_asignatura.save()
+        usuario_asignatura.save(force_insert=True)
         usuario = Usuario.objects.get(id_usuario=request.data['id_usuario'])
         usuario.monedas = request.data['monedas']
         usuario.save(update_fields=['monedas'])
