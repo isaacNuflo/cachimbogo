@@ -12,7 +12,8 @@ class AsignaturaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = Asignatura.objects.exclude(id_asignatura__in=[19,8])   #Excluye el curso que estan en la tienda
+        #Excluye el curso que estan en la tienda
+        items = Asignatura.objects.exclude(id_asignatura__in=[19,8])   
         serializer = AsignaturaSerializer(items, many=True)
         return Response(serializer.data, status=201)
 
@@ -23,7 +24,8 @@ class SubtemaTemaAPIView(APIView):
 
     def get(self, request, id, format=None):
         try:
-            item = Subtema.objects.filter(id_tema__pk=id)   #Subtemas de un tema
+            #Subtemas de un tema
+            item = Subtema.objects.filter(id_tema__pk=id)   
             serializer = SubtemaTemaSerializer(item, many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -36,7 +38,8 @@ class TemaAsignaturaAPIView(APIView):
 
     def get(self, request, id, format=None):
         try:
-            item = Tema.objects.filter(id_asignatura__pk=id)    #Temas de un asignatura
+            #Temas de un asignatura
+            item = Tema.objects.filter(id_asignatura__pk=id)    
             serializer = TemaAsignaturaSerializer(item, many=True)
             return Response(serializer.data)
         except Tema.DoesNotExist:
@@ -48,7 +51,8 @@ class TemaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = Tema.objects.all()  #Todos los temas
+        #Todos los temas
+        items = Tema.objects.all()  
         serializer = TemaSerializer(items, many=True)
         return Response(serializer.data, status=201)
 
@@ -58,7 +62,8 @@ class SubtemaAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
-        items = Subtema.objects.all()   #Todos los subtemas
+        #Todos los subtemas
+        items = Subtema.objects.all()   
         serializer = SubtemaSerializer(items, many=True)
         return Response(serializer.data, status=201)
 
@@ -100,7 +105,8 @@ class PreguntaTAPIListView(APIView):
     parser_classes = (JSONParser,)
 
     def get(self, request, id, format=None):
-        items = Pregunta.objects.filter(id_subtema__id_subtema=id)  #Pregutas de un subtema
+        #Pregutas de un subtema
+        items = Pregunta.objects.filter(id_subtema__id_subtema=id)  
         serializer = PreguntaTSerializer(items, many=True)
         return Response(serializer.data, status=201)
 
@@ -128,7 +134,8 @@ class PreguntaRAPIListView(APIView):
             return Response(response)
         i = 1
         while i <= cantidad:
-            rand = random.choice(items).id_pregunta #Random de las preguntas del subtema
+            #Random de las preguntas del subtema
+            rand = random.choice(items).id_pregunta 
             if not lists or (rand not in lists):
                 lists.append(rand)
                 response.append(self.get_answer(rand))
@@ -218,13 +225,16 @@ class RespuestaAPIListView(APIView):
                 respuesta = Respuesta.objects.get(id_usuario__pk=requests['id_usuario'],
                                                   id_pregunta__pk=requests['id_pregunta'])
                 respuesta.acertada = requests['acertada']
-                respuesta.save(update_fields=['acertada']) #Actualizacion de pregunta bien contestada
-            except Respuesta.DoesNotExist:  #Si la respuesta no existe, se inserta
+                #Actualizacion de pregunta bien contestada
+                respuesta.save(update_fields=['acertada']) 
+            #Si la respuesta no existe, se inserta
+            except Respuesta.DoesNotExist:  
                 usuario = Usuario.objects.get(id_usuario=requests['id_usuario'])
                 pregunta = Pregunta.objects.get(id_pregunta=requests['id_pregunta'])
                 respuesta = Respuesta(id_usuario=usuario, id_pregunta=pregunta,
                                       acertada=requests['acertada'])
-                respuesta.save(force_insert=True) #Insercion forzosa
+                #Insercion forzosa
+                respuesta.save(force_insert=True) 
         return Response(status=201)
 
 
@@ -387,33 +397,44 @@ class UsuarioSubtemaCascadaAPIListView(APIView):
                 subtemas = Subtema.objects.filter(id_tema=subtema.id_tema.id_tema)
                 id_subtemas = [id_subtema.id_subtema for id_subtema in subtemas]
                 u_subtema = UsuarioSubtema.objects.filter(id_subtema__in=id_subtemas, id_usuario=request.data['id_usuario'], completado=1)
-                porcentaje = (u_subtema.count() / subtemas.count()) * 100   #Porcentaje de subtema completo
+                #Porcentaje de subtema completo
+                porcentaje = (u_subtema.count() / subtemas.count()) * 100   
                 u_tema.porcentaje = porcentaje
-                u_tema.save(update_fields=['porcentaje'])   #Actualizacion del porcentaje
-                if porcentaje == 100.00:    #Si llega a 100% un subtema
+                #Actualizacion del porcentaje
+                u_tema.save(update_fields=['porcentaje'])
+                #Si llega a 100% un subtema
+                if porcentaje == 100.00:
                     tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                     temas = Tema.objects.filter(id_asignatura=tema.id_asignatura.id_asignatura)
                     id_temas = [id_tema.id_tema for id_tema in temas]
                     u_tema = UsuarioTema.objects.filter(id_tema__in=id_temas, id_usuario=request.data['id_usuario'], porcentaje=100.00)
-                    porcentaje = (u_tema.count() / temas.count()) * 100 #Porcentaje de tema completo
+                    #Porcentaje de tema completo
+                    porcentaje = (u_tema.count() / temas.count()) * 100 
                     u_asignatura = UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura,
                                                                  id_usuario=request.data['id_usuario'])
                     u_asignatura.porcentaje = porcentaje
-                    u_asignatura.save(update_fields=['porcentaje']) #Actualizacion del porcentaje
+                    #Actualizacion del porcentaje
+                    u_asignatura.save(update_fields=['porcentaje']) 
                 return Response(serializer.data, status=201)
-            except UsuarioTema.DoesNotExist: #Primera vez que desarrolla un subtema
-                porcentaje = (1 / subtemas.count()) * 100   #Un subtema completo
+            #Primera vez que desarrolla un subtema
+            except UsuarioTema.DoesNotExist: 
+                #Un subtema completo
+                porcentaje = (1 / subtemas.count()) * 100   
                 u_tema = UsuarioTema(id_usuario_id=request.data['id_usuario'], id_temas_id=subtema.id_tema.id_tema, porcentaje=porcentaje)
-                u_tema.save()   #Inserta un usuario-tema
+                 #Inserta un usuario-tema
+                u_tema.save()
                 tema = Tema.objects.get(pk=u_tema.id_tema.id_tema)
                 try:
                     UsuarioAsignatura.objects.get(id_asignatura=tema.id_asignatura.id_asignatura, id_usuario_id=request.data['id_usuario'])
-                except Asignatura.DoesNotExist: #Si usuario asignatura no existe
-                    porcentaje = (1 / temas.count()) * 100  #Un tema completo
+                #Si usuario asignatura no existe
+                except Asignatura.DoesNotExist: 
+                    #Un tema completo
+                    porcentaje = (1 / temas.count()) * 100
                     u_asignatura = UsuarioAsignatura(id_usuario_id=request.data['id_usuario'],
                                                      id_asignatura_id=tema.id_asignatura.id_asignatura,
                                                      porcentaje=porcentaje)
-                    u_asignatura.save() #Inserta usuario-asignatura
+                    #Inserta usuario-asignatura
+                    u_asignatura.save()
                     return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=400)

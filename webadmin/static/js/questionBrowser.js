@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var tema, subtema, asignatura;
-
+    //Captura el ID de los dropdown
     var selectAsiganaturas = $("#selectAsignaturas").attr("id");
     var selectTemas = $("#selectTemas").attr("id");
     var selectSubTemas = $("#selectSubTemas").attr("id");
@@ -10,15 +10,15 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         if (id === selectAsiganaturas) {
             asignatura = $(this).val();
-
-            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            // cargar url del servicio de temas
+            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; 
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
-
-            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            // cargar url de servicio de subtemas
+            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; 
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -26,13 +26,15 @@ $(document).ready(function () {
         }    
     });
     $("#buscar").click(function () {
-        var url = "https://cachimbogo.herokuapp.com/servicios/preguntaT/" + subtema; // Carga las preguntas
+        // Carga las preguntas
+        var url = "https://cachimbogo.herokuapp.com/servicios/preguntaT/" + subtema; 
         cargarTabla(url);
     });
     $("#agregar").click(function () {
+        //Redireccion
         window.location.href = "https://cachimbogo.herokuapp.com/webadmin/questionCreate";
     });
-
+    //Carga una tabla con las preguntas para que seleccione la que se editará
     function cargarTabla(url) {
         var table = $("#tabla tr");
         table.remove();
@@ -69,7 +71,7 @@ $(document).ready(function () {
             }
         });
     }
-
+    //Funcion que carga el contenido de los dropdown
     function cargarSelect(url, id, name) {
         var select = $("#" + id);
         var option = document.createElement("option");

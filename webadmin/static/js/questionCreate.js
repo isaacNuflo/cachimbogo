@@ -1,8 +1,8 @@
 $(document).ready(function () {
     var tema, subtema, asignatura, pregunta, alternativa1, alternativa2, alternativa3,
         alternativa4, alternativa5, informacion, dificultad, correcta;
-
-    var selectAsiganaturas = $("#selectAsignaturas").attr("id");
+    //Captura el ID de los dropdown
+    var selectAsignaturas = $("#selectAsignaturas").attr("id");
     var selectTemas = $("#selectTemas").attr("id");
     var selectSubTemas = $("#selectSubTemas").attr("id");
     var selectAlternativa = $("#selectAlternativa").attr("id");
@@ -11,17 +11,17 @@ $(document).ready(function () {
     $(".form-control").change(function () {
         var url = "";
         var id = $(this).attr("id");
-        if (id === selectAsiganaturas) {
+        if (id === selectAsignaturas) {
             asignatura = $(this).val();
-
-            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; // cargar url del servicio de temas
+            // cargar url del servicio de temas
+            url = "https://cachimbogo.herokuapp.com/servicios/tema-asignatura/" + asignatura; 
             $("#" + selectTemas).empty();
             cargarSelect(url, selectTemas, "temas");
         } else if (id === selectTemas) {
             tema = $(this).val();
             $("#" + selectSubTemas).empty();
-
-            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; // cargar url de servicio de subtemas
+            // cargar url de servicio de subtemas
+            url = "https://cachimbogo.herokuapp.com/servicios/subtema-tema/" + tema; 
 
             cargarSelect(url, selectSubTemas, "subtemas");
         } else if (id === selectSubTemas) {
@@ -45,6 +45,7 @@ $(document).ready(function () {
                                alternativa4, alternativa5, informacion, dificultad, correcta);
 
         enviarData(obj);
+        //Se elimina el contenido de los campos
         $("#Alternativa1").val("");
         $("#Alternativ2").val("");
         $("#Alternativa3").val("");
@@ -54,10 +55,11 @@ $(document).ready(function () {
     });
 
     function enviarData(obj) {
+        //Servicio que guarda la pregunta
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: "https://cachimbogo.herokuapp.com/servicios/preguntaT/",   //Servicio que guarda la pregunta
+            url: "https://cachimbogo.herokuapp.com/servicios/preguntaT/",
             csrfmiddlewaretoken: "{{ csrf_token }}",
             data: JSON.stringify(obj),
             headers: {
@@ -72,7 +74,7 @@ $(document).ready(function () {
         });
 
     }
-
+    //Funcion que carga el contenido de los dropdown
     function cargarSelect(url, id, name) {
         var select = $("#" + id);
         var option = document.createElement("option");
@@ -94,7 +96,7 @@ $(document).ready(function () {
     }
 
 });
-
+//Creación del objeto para enviar al servicio
 function crearObj(subtema,pregunta, alternativa1, alternativa2, alternativa3,
                   alternativa4, alternativa5, informacion, dificultad, correcta) {
     this.id_pregunta = null;
